@@ -178,7 +178,10 @@
   .hero {
     position: relative;
     min-height: 100vh;
-    background: var(--ink);
+    background:
+      linear-gradient(rgba(10,10,10,0.68), rgba(10,10,10,0.78)),
+      url('/assets/hero.jpg') center / cover no-repeat,
+      var(--ink);
     color: var(--paper);
     padding: 120px 36px 80px;
     overflow: hidden;
@@ -956,12 +959,9 @@
 <section class="hero">
   <div class="hero-meta">
     <span>Strait Bargate · Boston · Lincolnshire</span>
-    <span>A new dental practice</span>
-    <span>Opening Autumn 2026</span>
   </div>
   <div class="hero-inner">
     <h1>Boston Dental HQ</h1>
-    <div class="hero-eyebrow"><span class="dot"></span> Coming Soon</div>
     <p class="hero-sub">Our brand-new practice on Strait Bargate opens Autumn 2026. Book your appointment below and we'll save your place in the opening diary — or give us a call.</p>
   </div>
   <div class="hero-foot">
