@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Boston Dental HQ</title>
+<meta name="description" content="How Boston Dental HQ collects, uses and protects your personal information. UK GDPR compliant privacy notice for a Boston dental practice." />
+<meta name="robots" content="index, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+
+  /* ════════════════════════════════════════════ */
+  /*  RESET & TOKENS                               */
+  /* ════════════════════════════════════════════ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:        #0A0A0A;
+    --paper:      #FFFFFF;
+    --bone:       #FFFFFF;
+    --bone-deep:  #F4F4F8;
+    --accent:     #5B5BE8;
+    --mute:       #8E8E88;
+    --mute-ink:   #6A6A66;
+    --line:       rgba(255,255,255,0.14);
+    --line-ink:   rgba(10,10,10,0.10);
+    --sans: 'Archivo', system-ui, sans-serif;
+    --serif: 'Fraunces', Georgia, serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 36px;
+  }
+  .wrap-narrow {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 36px;
+  }
+
+  /* ════════════════════════════════════════════ */
+  /*  NAV                                          */
+  /* ════════════════════════════════════════════ */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 36px;
+    z-index: 100;
+    transition: background 350ms ease, color 350ms ease, border-color 350ms ease;
+    border-bottom: 1px solid transparent;
+  }
+  .nav.dark {
+    background: rgba(10,10,10,0.62);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--paper);
+    border-bottom-color: var(--line);
+  }
+  .nav:not(.dark) {
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--ink);
+    border-bottom-color: var(--line-ink);
+  }
+  .nav .mark {
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 10px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .nav .mark .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  .nav .mark .mark-sub {
+    opacity: 0.5;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    font-size: 11px;
+  }
+  .nav .book {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 11px 20px;
+    border: 1px solid currentColor;
+    transition: background 250ms ease, color 250ms ease;
+    color: inherit;
+    text-decoration: none;
+  }
+  .nav .book:hover {
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
+  }
+
+  @media (max-width: 820px) {
+    .nav { padding: 18px 22px; }
+    .nav .mark .mark-sub { display: none; }
+  }
+
+  /* ════════════════════════════════════════════ */
+  /*  PAGE HERO                                    */
+  /* ════════════════════════════════════════════ */
+  .page-hero {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 180px 0 80px;
+    border-bottom: 1px solid var(--line-ink);
+  }
+  .page-hero .meta {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute-ink);
+    font-weight: 500;
+    margin-bottom: 36px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .page-hero .meta::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: currentColor;
+  }
+  .page-hero h1 {
+    font-size: clamp(48px, 8vw, 120px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 30px;
+  }
+  .page-hero h1 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+  .page-hero .lede {
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: var(--mute-ink);
+    max-width: 680px;
+  }
+  @media (max-width: 720px) {
+    .page-hero { padding: 130px 0 60px; }
+  }
+
+  /* ════════════════════════════════════════════ */
+  /*  PROSE                                        */
+  /* ════════════════════════════════════════════ */
+  .prose {
+    padding: 90px 0 130px;
+    background: var(--paper);
+  }
+  .prose-section + .prose-section {
+    margin-top: 64px;
+  }
+  .prose-section .sec-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+    font-size: 18px;
+    line-height: 1;
+    margin-bottom: 14px;
+    display: flex; align-items: baseline; gap: 14px;
+  }
+  .prose-section .sec-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--accent);
+    opacity: 0.25;
+    margin-bottom: 4px;
+  }
+  .prose-section h2 {
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .prose-section h2 em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    color: var(--accent);
+  }
+  .prose-section h3 {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .prose-section p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .prose-section ul {
+    margin-bottom: 16px;
+    padding-left: 0;
+    list-style: none;
+  }
+  .prose-section li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink);
+    padding-left: 28px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .prose-section li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 13px;
+    width: 14px; height: 1px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+  .prose-section a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .prose-section a:hover { opacity: 0.7; }
+  .prose-section strong { font-weight: 700; }
+  .prose-section em { font-style: italic; }
+
+  /* small key-value block for practice info */
+  .info-block {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 10px 24px;
+    margin: 18px 0 24px;
+    padding: 24px 28px;
+    background: var(--bone-deep);
+    border-left: 3px solid var(--accent);
+  }
+  .info-block dt {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute-ink);
+    font-weight: 600;
+    padding-top: 3px;
+  }
+  .info-block dd {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  @media (max-width: 720px) {
+    .info-block { grid-template-columns: 1fr; gap: 4px 0; padding: 22px 22px; }
+    .info-block dd { margin-bottom: 12px; }
+    .info-block dd:last-child { margin-bottom: 0; }
+  }
+
+  /* contents */
+  .contents {
+    background: var(--bone-deep);
+    padding: 36px 40px;
+    margin-bottom: 70px;
+  }
+  .contents .ttl {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--mute-ink);
+    margin-bottom: 22px;
+  }
+  .contents ol {
+    list-style: none;
+    counter-reset: section;
+    columns: 2;
+    column-gap: 40px;
+  }
+  .contents li {
+    counter-increment: section;
+    font-size: 14px;
+    line-height: 1.7;
+    break-inside: avoid;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .contents li::before { display: none; }
+  .contents li a {
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    gap: 12px;
+    padding: 6px 0;
+  }
+  .contents li a:hover { color: var(--accent); }
+  .contents li a::before {
+    content: counter(section, decimal-leading-zero);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+    font-size: 13px;
+    width: 22px;
+    flex-shrink: 0;
+  }
+  @media (max-width: 720px) {
+    .contents ol { columns: 1; }
+    .contents { padding: 28px 24px; }
+  }
+
+  /* ════════════════════════════════════════════ */
+  /*  FOOTER                                       */
+  /* ════════════════════════════════════════════ */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 0 40px;
+  }
+  footer .foot-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 70px;
+  }
+  footer .foot-brand .mark {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.025em;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 24px;
+  }
+  footer .foot-brand .mark .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 18px var(--accent);
+  }
+  footer .foot-brand p {
+    font-size: 13px; line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    max-width: 320px;
+  }
+  footer .foot-col h4 {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 22px;
+  }
+  footer .foot-col p, footer .foot-col a {
+    font-size: 13px; line-height: 1.85;
+    color: rgba(255,255,255,0.78);
+    display: block;
+    text-decoration: none;
+  }
+  footer .foot-col a:hover { color: var(--accent); }
+  footer .foot-bottom {
+    display: flex; justify-content: space-between;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    flex-wrap: wrap; gap: 16px;
+  }
+  footer .foot-bottom a { color: inherit; text-decoration: none; }
+  footer .foot-bottom a:hover { color: var(--accent); }
+  @media (max-width: 820px) {
+    footer { padding: 60px 0 30px; }
+    footer .foot-top { grid-template-columns: 1fr; gap: 40px; margin-bottom: 50px; }
+    footer .foot-bottom { font-size: 10px; flex-direction: column; align-items: flex-start; }
+  }
+
+
+  /* ── mobile dropdown menu (dot toggle) ── */
+  .nav .mark-link { display: flex; align-items: center; gap: 10px; color: inherit; }
+  .nav .dot-toggle {
+    background: none; border: none;
+    padding: 10px; margin: -10px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: inherit;
+  }
+  .nav .dot-toggle .dot { transition: transform 250ms ease; }
+  .nav.menu-open .dot-toggle .dot { transform: scale(1.6); }
+  .nav-menu {
+    position: absolute; top: 100%; left: 0; right: 0;
+    display: none; flex-direction: column;
+    padding: 8px 22px 26px;
+    background: rgba(244,243,239,0.97);
+    border-bottom: 1px solid var(--line-ink);
+    backdrop-filter: blur(12px);
+  }
+  .nav.dark .nav-menu { background: rgba(10,10,10,0.96); border-color: var(--line); }
+  .nav.menu-open .nav-menu { display: flex; }
+  .nav-menu .menu-item {
+    padding: 15px 0;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px dashed var(--line-ink);
+  }
+  .nav.dark .nav-menu .menu-item { border-color: var(--line); }
+  .nav-menu .menu-book-row {
+    margin-top: 22px;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  }
+  .nav-menu .menu-book {
+    display: inline-flex;
+    padding: 13px 22px;
+    border: 1px solid currentColor;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  .nav-menu .menu-phone { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; }
+  .nav-menu .menu-phone em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    opacity: 0.6; margin-right: 4px;
+  }
+  @media (min-width: 821px) {
+    .nav-menu { display: none !important; }
+    .nav .dot-toggle { pointer-events: none; }
+  }
+
+
+  /* hamburger icon on mobile (dot stays on desktop) */
+  .nav .dot-toggle .burger { display: none; }
+  @media (max-width: 820px) {
+    .nav .dot-toggle .dot { display: none; }
+    .nav .dot-toggle .burger {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .nav .dot-toggle .burger i {
+      display: block;
+      width: 20px; height: 2px;
+      background: currentColor;
+      border-radius: 1px;
+      transition: transform 250ms ease, opacity 200ms ease;
+    }
+    .nav.menu-open .dot-toggle .burger i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav.menu-open .dot-toggle .burger i:nth-child(2) { opacity: 0; }
+    .nav.menu-open .dot-toggle .burger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  }
+
+
+  /* header phone next to / under the book button */
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .nav-phone {
+    font-size: 12px; letter-spacing: 0.08em; font-weight: 700;
+    white-space: nowrap;
+    transition: color 220ms ease;
+  }
+  .nav-phone:hover { color: var(--accent); }
+  .nav-phone em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    opacity: 0.65;
+    letter-spacing: 0;
+    margin-right: 4px;
+  }
+  @media (max-width: 820px) {
+    .nav-right { flex-direction: column; align-items: flex-end; gap: 5px; }
+    .nav .book { order: 1; }
+    .nav-phone { order: 2; font-size: 11px; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="mark">
+    <button class="dot-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span class="dot"></span><span class="burger"><i></i><i></i><i></i></span></button>
+    <a class="mark-link" href="/">BDHQ <span class="mark-sub">&mdash; BOSTON DENTAL HQ</span></a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-phone" href="tel:+441205337000"><em>call us</em> 01205 337 000</a>
+    <a class='book' href='/#book'>Book an appointment</a>
+  </div>
+
+  <!-- mobile dropdown (opened by tapping the dot) -->
+  <div class="nav-menu" id="navMenu">
+    <a class="menu-item" href="/#about">About</a>
+    <a class="menu-item" href="/team">Team</a>
+    <a class="menu-item" href="/pricing">Pricing</a>
+    <a class="menu-item" href="/careers">Careers</a>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="wrap-narrow">
+    <div class="meta">Legal — Last updated 7 June 2026</div>
+    <h1>Privacy <em>Policy.</em></h1>
+    <p class="lede">How Boston Dental HQ collects, uses, and protects your personal information. We've written this notice to be as plain and clear as we can manage — please get in touch if anything is unclear.</p>
+  </div>
+</section>
+
+<!-- ═══ PROSE BODY ═══ -->
+<main class="prose">
+  <div class="wrap-narrow">
+
+    <!-- Contents -->
+    <nav class="contents" aria-label="Table of contents">
+      <div class="ttl">Contents</div>
+      <ol>
+        <li><a href="#about">About this notice</a></li>
+        <li><a href="#controller">Who we are</a></li>
+        <li><a href="#registrations">ICO and CQC registration</a></li>
+        <li><a href="#legal-basis">Legal basis for processing</a></li>
+        <li><a href="#what-we-collect">What information we collect</a></li>
+        <li><a href="#why">Why we collect it</a></li>
+        <li><a href="#sharing">Who we share information with</a></li>
+        <li><a href="#transfers">International transfers</a></li>
+        <li><a href="#retention">How long we keep information</a></li>
+        <li><a href="#rights">Your rights</a></li>
+        <li><a href="#security">How we keep information secure</a></li>
+        <li><a href="#breaches">Personal data breaches</a></li>
+        <li><a href="#cookies">Cookies and analytics</a></li>
+        <li><a href="#applicants">For job applicants</a></li>
+        <li><a href="#complaints">Complaints</a></li>
+        <li><a href="#contact">Contact us</a></li>
+        <li><a href="#changes">Changes to this notice</a></li>
+      </ol>
+    </nav>
+
+    <!-- ─────────── 1 ─────────── -->
+    <section class="prose-section" id="about">
+      <div class="sec-label">i.</div>
+      <h2>About this <em>notice.</em></h2>
+      <p>This privacy notice explains how Boston Dental HQ Limited (<em>"Boston Dental HQ"</em>, <em>"we"</em>, <em>"us"</em>, <em>"our"</em>) collects, uses, and protects information about you when you visit our website, register your interest in becoming a patient, or — once we are open — receive care from us.</p>
+      <p>We are committed to protecting your personal information and to being transparent about what we do with it. This notice should be read alongside our other practice policies, which will be published in full when the practice opens.</p>
+      <p><strong>A note on our current stage.</strong> Boston Dental HQ is currently in its pre-launch phase. The practice is due to open in Autumn 2026. Until we open, the only personal information we collect is what you choose to submit through the <em>Register your interest</em> form on bostondentalhq.com. This notice covers both that current activity and how we will handle information once the practice is operating.</p>
+    </section>
+
+    <!-- ─────────── 2 ─────────── -->
+    <section class="prose-section" id="controller">
+      <div class="sec-label">ii.</div>
+      <h2>Who we <em>are.</em></h2>
+      <p>Boston Dental HQ Limited is the data controller for the personal information we collect.</p>
+      <dl class="info-block">
+        <dt>Company</dt>
+        <dd>Boston Dental HQ Limited</dd>
+        <dt>Company no.</dt>
+        <dd>16943791</dd>
+        <dt>Practice address</dt>
+        <dd>14–16 Strait Bargate, Boston, Lincolnshire, PE21 6LW</dd>
+        <dt>Website</dt>
+        <dd>bostondentalhq.com</dd>
+      </dl>
+    </section>
+
+    <!-- ─────────── 3 ─────────── -->
+    <section class="prose-section" id="registrations">
+      <div class="sec-label">iii.</div>
+      <h2>ICO and CQC <em>registration.</em></h2>
+      <p>Boston Dental HQ Limited is registering with the Information Commissioner's Office (ICO) and the Care Quality Commission (CQC) in advance of opening. Registration numbers will be added to this notice when they are issued.</p>
+      <ul>
+        <li><strong>ICO:</strong> <a href="https://ico.org.uk/" target="_blank" rel="noopener">https://ico.org.uk/</a></li>
+        <li><strong>CQC:</strong> <a href="https://www.cqc.org.uk/" target="_blank" rel="noopener">https://www.cqc.org.uk/</a></li>
+      </ul>
+    </section>
+
+    <!-- ─────────── 4 ─────────── -->
+    <section class="prose-section" id="legal-basis">
+      <div class="sec-label">iv.</div>
+      <h2>Legal basis for <em>processing.</em></h2>
+      <p>We process personal information under the following legal bases:</p>
+      <h3>For the registration-of-interest form (currently)</h3>
+      <ul>
+        <li><strong>Article 6(1)(a) UK GDPR — your consent.</strong> You tick the consent box when submitting the form. You can withdraw your consent at any time by contacting us.</li>
+      </ul>
+      <h3>Once the practice is operating (from Autumn 2026)</h3>
+      <ul>
+        <li><strong>Article 6(1)(b) UK GDPR</strong> — processing necessary for the performance of a contract (the provision of dental care you have requested).</li>
+        <li><strong>Article 9(2)(h) UK GDPR</strong> — processing necessary for the purposes of preventative or occupational medicine, medical diagnosis, the provision of health care or treatment, on the basis of UK law or a contract with a health professional.</li>
+        <li><strong>Article 6(1)(c) UK GDPR</strong> — compliance with legal obligations (e.g. retention of clinical records under General Dental Council guidance).</li>
+      </ul>
+    </section>
+
+    <!-- ─────────── 5 ─────────── -->
+    <section class="prose-section" id="what-we-collect">
+      <div class="sec-label">v.</div>
+      <h2>What information we <em>collect.</em></h2>
+      <h3>Currently (pre-launch)</h3>
+      <p>When you register your interest on bostondentalhq.com, we collect:</p>
+      <ul>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>Your phone number</li>
+        <li>A record of your consent to be contacted</li>
+        <li>The date and time you submitted the form</li>
+      </ul>
+      <h3>Once the practice opens</h3>
+      <p>We will collect additional information from patients in the course of providing care, which will typically include:</p>
+      <ul>
+        <li>Contact and identification details (address, date of birth, next of kin)</li>
+        <li>Medical and dental history</li>
+        <li>Clinical records, dental images, radiographs and treatment plans</li>
+        <li>Payment information (we do not store full card details)</li>
+        <li>Records of correspondence with you</li>
+      </ul>
+    </section>
+
+    <!-- ─────────── 6 ─────────── -->
+    <section class="prose-section" id="why">
+      <div class="sec-label">vi.</div>
+      <h2>Why we collect this <em>information.</em></h2>
+      <h3>Currently (pre-launch)</h3>
+      <ul>
+        <li>To contact you when the practice opens to invite you to book an appointment.</li>
+        <li>To respond to any questions you send us through the website.</li>
+      </ul>
+      <h3>Once the practice is operating</h3>
+      <ul>
+        <li>To provide safe and effective dental care.</li>
+        <li>To maintain accurate clinical and administrative records.</li>
+        <li>To respond to your queries and any concerns.</li>
+        <li>To meet our regulatory and legal obligations (to the GDC, CQC, ICO, HMRC and others).</li>
+        <li>To audit and improve the quality of our care.</li>
+        <li>To send you appointment reminders and service-related information.</li>
+        <li>To send you, with your consent, information about our services that we think may interest you. You can opt out of these communications at any time.</li>
+      </ul>
+    </section>
+
+    <!-- ─────────── 7 ─────────── -->
+    <section class="prose-section" id="sharing">
+      <div class="sec-label">vii.</div>
+      <h2>Who we share information <em>with.</em></h2>
+      <h3>Currently</h3>
+      <p>Two third-party service providers process information on our behalf:</p>
+      <ul>
+        <li><strong>Web3Forms</strong> — a form-processing service based in the United States. When you submit the form on our website, your information is transmitted via Web3Forms to our practice email inbox. Web3Forms acts as a data processor under our instructions. Their privacy policy is at <a href="https://web3forms.com/legal/privacy-policy" target="_blank" rel="noopener">web3forms.com/legal/privacy-policy</a>.</li>
+        <li><strong>Netlify</strong> — our website hosting provider, based in the United States. Netlify processes server logs in the course of delivering the website to your browser.</li>
+      </ul>
+      <h3>Once the practice is operating, we may also share information with:</h3>
+      <ul>
+        <li>Other dental and medical professionals involved in your care, including referrals to specialists and dental laboratories.</li>
+        <li>The General Dental Council (GDC), Care Quality Commission (CQC), and Information Commissioner's Office (ICO) where required by law or regulation.</li>
+        <li>HM Revenue &amp; Customs and other government bodies where required.</li>
+        <li>Our practice-management software provider, our IT support provider, and our accountancy/payroll provider — each acting as a data processor under formal written agreements.</li>
+        <li>Our indemnity insurance provider, in the event of a complaint or claim.</li>
+      </ul>
+      <p>We do not sell your information to third parties for marketing purposes, and we never will.</p>
+    </section>
+
+    <!-- ─────────── 8 ─────────── -->
+    <section class="prose-section" id="transfers">
+      <div class="sec-label">viii.</div>
+      <h2>International <em>transfers.</em></h2>
+      <p>Some of the services we use — specifically Web3Forms and Netlify — are based in the United States. This means that personal information you submit through our website is transferred outside the United Kingdom.</p>
+      <p>These transfers are protected by appropriate safeguards in line with UK GDPR, including the UK International Data Transfer Agreement (IDTA) and Standard Contractual Clauses (SCCs) where applicable. The services we use publish their own data-protection commitments and have implemented technical and organisational measures consistent with UK and EU standards.</p>
+    </section>
+
+    <!-- ─────────── 9 ─────────── -->
+    <section class="prose-section" id="retention">
+      <div class="sec-label">ix.</div>
+      <h2>How long we keep <em>information.</em></h2>
+      <h3>Registration form data (pre-launch)</h3>
+      <p>We will keep your registration details until the practice opens and you either become a patient or tell us you no longer wish to be contacted. If you have not engaged with us within 12 months of our opening, we will delete your details.</p>
+      <h3>Patient records (once operating)</h3>
+      <p>We will retain clinical records in line with General Dental Council and UK legal guidance:</p>
+      <ul>
+        <li><strong>Adult patients:</strong> at least 11 years from the date of the last entry in your record.</li>
+        <li><strong>Patients who were minors at any time:</strong> until your 25th birthday, or 11 years from the last entry, whichever is later.</li>
+      </ul>
+      <p>Financial and tax records are retained for 6 years in line with HMRC requirements. Other records (e.g. correspondence, complaints) are kept for the period appropriate to their purpose.</p>
+    </section>
+
+    <!-- ─────────── 10 ─────────── -->
+    <section class="prose-section" id="rights">
+      <div class="sec-label">x.</div>
+      <h2>Your <em>rights.</em></h2>
+      <p>Under UK GDPR, you have the following rights in relation to your personal information:</p>
+      <ul>
+        <li><strong>Right of access</strong> — to obtain a copy of the personal information we hold about you.</li>
+        <li><strong>Right to rectification</strong> — to ask us to correct inaccurate or incomplete information.</li>
+        <li><strong>Right to erasure</strong> — to ask us to delete your information where there is no compelling reason for us to continue holding it.</li>
+        <li><strong>Right to restrict processing</strong> — to ask us to limit how we use your information in certain circumstances.</li>
+        <li><strong>Right to data portability</strong> — to receive a copy of your information in a structured, portable format.</li>
+        <li><strong>Right to object</strong> — to processing for direct marketing, or where we are relying on legitimate interests.</li>
+        <li><strong>Right to withdraw consent</strong> — at any time, where we are processing your information on the basis of your consent.</li>
+        <li><strong>Right not to be subject to solely automated decision-making.</strong></li>
+      </ul>
+      <p>To exercise any of these rights, please contact us using the details in section 15. We will normally respond within one calendar month.</p>
+    </section>
+
+    <!-- ─────────── 11 ─────────── -->
+    <section class="prose-section" id="security">
+      <div class="sec-label">xi.</div>
+      <h2>How we keep information <em>secure.</em></h2>
+      <p>We take the security of your personal information seriously. The measures we have in place include:</p>
+      <ul>
+        <li>Encrypted (HTTPS) transmission of all data submitted through our website.</li>
+        <li>Restricted access — only staff who need to use your information for their role can see it.</li>
+        <li>Staff training on data protection and confidentiality, refreshed at least annually.</li>
+        <li>A written data protection policy, secure password practices, and clear breach-response procedures.</li>
+        <li>Written data processing agreements with all third-party service providers requiring equivalent security standards.</li>
+        <li>Confidentiality clauses in all staff contracts.</li>
+      </ul>
+    </section>
+
+    <!-- ─────────── 12 ─────────── -->
+    <section class="prose-section" id="breaches">
+      <div class="sec-label">xii.</div>
+      <h2>Personal data <em>breaches.</em></h2>
+      <p>If we suffer a personal data breach that is likely to result in a risk to your rights and freedoms, we will notify the Information Commissioner's Office within 72 hours of becoming aware of it. If the breach is likely to result in a <em>high</em> risk to you, we will notify you directly without undue delay.</p>
+      <p>We keep a written record of all personal data breaches, regardless of whether they are reportable.</p>
+    </section>
+
+    <!-- ─────────── 13 ─────────── -->
+    <section class="prose-section" id="cookies">
+      <div class="sec-label">xiii.</div>
+      <h2>Cookies and <em>analytics.</em></h2>
+      <p>The bostondentalhq.com website does not currently use cookies for tracking, analytics, or advertising. The website does not run third-party analytics scripts.</p>
+      <p>Typefaces on the website are loaded from Google Fonts. Doing so involves your browser making a request to Google's font servers (fonts.googleapis.com), which may log your IP address. See Google's privacy policy for details of how this is handled.</p>
+      <p>We will update this section if we introduce cookies or any other tracking technology.</p>
+    </section>
+
+    <!-- ─────────── 14 ─────────── -->
+    <section class="prose-section" id="applicants">
+      <div class="sec-label">xiv.</div>
+      <h2>For job <em>applicants.</em></h2>
+      <p>If you apply for a role at Boston Dental HQ through the careers page on our website (bostondentalhq.com/careers.html), we collect and process information specifically for the purposes of recruitment.</p>
+
+      <h3>What we collect</h3>
+      <ul>
+        <li>Your name, email address, and phone number.</li>
+        <li>The role you've applied for, and your GDC registration number if you've chosen to provide it.</li>
+        <li>Your CV.</li>
+        <li>Any cover note you've chosen to include.</li>
+        <li>A record of your consent and the date and time you applied.</li>
+      </ul>
+      <p>Your CV may include additional information that you've chosen to share — for example, employment history, qualifications, references, or personal interests. Some of this may fall into what UK GDPR calls <em>"special category"</em> data (such as health, ethnic origin, or trade union membership). We do not ask for any of this, and where it appears we use it only for the assessment of your application.</p>
+
+      <h3>Legal basis</h3>
+      <p>We process your information on two bases:</p>
+      <ul>
+        <li><strong>Article 6(1)(a) UK GDPR</strong> — your consent (you tick the box when you submit the form).</li>
+        <li><strong>Article 6(1)(f) UK GDPR</strong> — our legitimate interest in recruiting suitable people for our team. We have considered the impact on your privacy and believe this is proportionate; you can object at any time.</li>
+      </ul>
+
+      <h3>Who sees it</h3>
+      <ul>
+        <li>Members of our internal hiring panel — the company directors and, where appropriate, the practice manager.</li>
+        <li>Web3Forms, our form-processing service (see section 7), which transmits your application to our inbox.</li>
+      </ul>
+      <p>We do not share applications with any other third party. Your CV is not stored on the website itself.</p>
+
+      <h3>How long we keep it</h3>
+      <ul>
+        <li>If your application is unsuccessful, we will keep your details for up to <strong>12 months</strong> from the date you applied, in case a suitable role comes up. After that, we will delete them.</li>
+        <li>If we hire you, your application becomes part of your employment record and is kept in line with employment law (typically 6 years after employment ends).</li>
+        <li>You can ask us to delete your application at any time using the contact details in section 16.</li>
+      </ul>
+
+      <h3>Your rights</h3>
+      <p>All the rights set out in section 10 of this notice apply to your application data.</p>
+    </section>
+
+    <!-- ─────────── 15 ─────────── -->
+    <section class="prose-section" id="complaints">
+      <div class="sec-label">xv.</div>
+      <h2><em>Complaints.</em></h2>
+      <p>If you are unhappy with how we have handled your personal information, please contact our data protection lead first (section 16). We will investigate your concern and respond.</p>
+      <p>If you remain dissatisfied, you have the right to lodge a complaint with the Information Commissioner's Office:</p>
+      <dl class="info-block">
+        <dt>ICO</dt>
+        <dd>Information Commissioner's Office<br>Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF</dd>
+        <dt>Telephone</dt>
+        <dd>0303 123 1113 (local rate) &nbsp;or&nbsp; 01625 545 745 (national)</dd>
+        <dt>Website</dt>
+        <dd><a href="https://ico.org.uk/" target="_blank" rel="noopener">https://ico.org.uk/</a></dd>
+      </dl>
+    </section>
+
+    <!-- ─────────── 16 ─────────── -->
+    <section class="prose-section" id="contact">
+      <div class="sec-label">xvi.</div>
+      <h2>Contact <em>us.</em></h2>
+      <p>For any data-protection queries — including requests to access, correct, or delete your information, or to withdraw consent — please contact:</p>
+      <dl class="info-block">
+        <dt>By post</dt>
+        <dd>Data Protection Lead<br>Boston Dental HQ Limited<br>14–16 Strait Bargate<br>Boston, Lincolnshire<br>PE21 6LW</dd>
+      </dl>
+    </section>
+
+    <!-- ─────────── 17 ─────────── -->
+    <section class="prose-section" id="changes">
+      <div class="sec-label">xvii.</div>
+      <h2>Changes to this <em>notice.</em></h2>
+      <p>We will review this notice regularly and update it when there are material changes to the way we process your information, when we add new services or third-party processors, or when guidance from the ICO or other regulators changes.</p>
+      <p>The current version will always be available at <a href='https://bostondentalhq.com/privacy'>bostondentalhq.com/privacy.html</a>. The <em>"Last updated"</em> date at the top of this notice reflects when it was most recently revised.</p>
+    </section>
+
+  </div>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="mark"><span class="dot"></span> Boston Dental HQ</div>
+        <p>A state-of-the-art five-surgery dental practice. Opening on Strait Bargate, Boston — Autumn 2026.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Find us</h4>
+        <p>14–16 Strait Bargate<br>Boston, Lincolnshire<br>PE21 6LW</p>
+      </div>
+      <div class="foot-col">
+        <h4>Status</h4>
+        <p>Construction in progress<br>Opening Autumn 2026<br>365 days · 7 days a week<br>24/7 emergency phone</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Boston Dental HQ Limited · Co. 16943791</span>
+      <span><a href='/'>Home</a> &nbsp;·&nbsp; CQC-registered · GDC-registered clinicians</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── nav dark/light adapter ── */
+  const nav = document.getElementById('nav');
+  const darkSections = document.querySelectorAll('footer');
+
+  function updateNav() {
+    const navHeight = 60;
+    let isDark = false;
+    darkSections.forEach((s) => {
+      const r = s.getBoundingClientRect();
+      if (r.top < navHeight && r.bottom > navHeight) {
+        isDark = true;
+      }
+    });
+    nav.classList.toggle('dark', isDark);
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  window.addEventListener('resize', updateNav);
+  updateNav();
+</script>
+
+<script>
+  /* mobile dropdown menu */
+  (function () {
+    var navEl = document.getElementById('nav');
+    var toggle = document.getElementById('menuToggle');
+    if (!navEl || !toggle) return;
+    toggle.addEventListener('click', function () {
+      var open = navEl.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.querySelectorAll('.nav-menu a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navEl.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>

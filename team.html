@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Team — Boston Dental HQ · Meet our clinicians</title>
+<meta name="description" content="Meet the founding team at Boston Dental HQ — experienced, GDC-registered clinicians at our new practice on Strait Bargate, Boston." />
+<meta name="robots" content="index, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+
+  /* ════════════════════════════════════════════ */
+  /*  RESET & TOKENS                               */
+  /* ════════════════════════════════════════════ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:        #0A0A0A;
+    --ink-soft:   #1A1A1A;
+    --paper:      #FFFFFF;
+    --bone:       #FFFFFF;
+    --bone-deep:  #F4F4F8;
+    --accent:     #5B5BE8;
+    --mute:       rgba(255,255,255,0.55);
+    --mute-ink:   #6A6A66;
+    --line:       rgba(255,255,255,0.14);
+    --line-ink:   rgba(10,10,10,0.10);
+    --sans:       'Archivo', system-ui, sans-serif;
+    --serif:      'Fraunces', Georgia, serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bone);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  .wrap { max-width: 1480px; margin: 0 auto; padding: 0 36px; }
+  @media (max-width: 720px) { .wrap { padding: 0 22px; } }
+
+  .reveal {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 800ms ease, transform 800ms ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ════════════════════════════════════════════ */
+  /*  NAV                                          */
+  /* ════════════════════════════════════════════ */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 36px;
+    transition: background 400ms ease, color 400ms ease, border-color 400ms ease;
+    border-bottom: 1px solid transparent;
+    color: var(--ink);
+    backdrop-filter: blur(8px);
+    background: rgba(244,243,239,0.72);
+    border-color: var(--line-ink);
+  }
+  .nav.dark {
+    color: var(--paper);
+    background: rgba(10,10,10,0.62);
+    border-color: var(--line);
+  }
+  .nav .mark {
+    font-weight: 800; font-size: 14px; letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav .mark .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  .nav .mark .mark-sub {
+    opacity: 0.5; font-weight: 400; letter-spacing: 0.2em; font-size: 11px;
+  }
+  .nav-right { display: flex; align-items: center; gap: 28px; }
+  .nav-links { display: flex; align-items: center; gap: 24px; }
+  .nav-links a {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: opacity 220ms ease, color 220ms ease;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--accent); }
+  .nav-links a.active { opacity: 1; color: var(--accent); }
+  .nav-phone {
+    font-size: 12px; letter-spacing: 0.08em; font-weight: 700;
+    white-space: nowrap;
+    transition: color 220ms ease;
+  }
+  .nav-phone:hover { color: var(--accent); }
+  .nav-phone em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    opacity: 0.65;
+    letter-spacing: 0;
+    margin-right: 4px;
+  }
+  .nav .book {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 700;
+    padding: 11px 20px;
+    border: 1px solid currentColor;
+    transition: background 250ms ease, color 250ms ease;
+  }
+  .nav .book:hover {
+    background: var(--accent); color: var(--paper); border-color: var(--accent);
+  }
+  @media (max-width: 820px) {
+    .nav { padding: 18px 22px; }
+    .nav .mark .mark-sub { display: none; }
+    .nav-links { display: none; }
+    .nav-right { flex-direction: column; align-items: flex-end; gap: 5px; }
+    .nav .book { order: 1; }
+    .nav-phone { display: block; order: 2; font-size: 11px; }
+  }
+
+  /* ════════════════════════════════════════════ */
+  /*  PAGE HEADER (dark)                           */
+  /* ════════════════════════════════════════════ */
+  .page-head {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 190px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-head::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 calc(100% / 48 - 1px),
+        rgba(255,255,255,0.03) calc(100% / 48 - 1px) calc(100% / 48)
+      );
+    pointer-events: none;
+  }
+  .page-head > .wrap { position: relative; z-index: 2; }
+  .page-head .label {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    display: flex; align-items: center; gap: 14px;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  .page-head .label::before {
+    content: ''; width: 28px; height: 1px; background: currentColor;
+  }
+  .page-head h1 {
+    font-size: clamp(44px, 7vw, 110px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 28px;
+  }
+  .page-head h1 em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    color: var(--accent);
+  }
+  .page-head p {
+    font-size: 17px; line-height: 1.65;
+    color: rgba(255,255,255,0.75);
+    max-width: 620px;
+  }
+  @media (max-width: 720px) {
+    .page-head { padding: 150px 0 70px; }
+  }
+
+  /* ════════════════════════════════════════════ */
+  /*  TEAM GRID                                    */
+  /* ════════════════════════════════════════════ */
+  .team-section {
+    background: var(--bone-deep);
+    padding: 100px 0 110px;
+  }
+  .team-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .team-card {
+    background: var(--paper);
+    box-shadow: 0 16px 48px rgba(10,10,10,0.07);
+    padding: 44px 36px;
+    text-align: center;
+  }
+  .team-avatar {
+    width: 110px; height: 110px; border-radius: 50%;
+    background: var(--bone-deep);
+    border: 1px solid var(--line-ink);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    font-size: 28px;
+    color: var(--accent);
+    overflow: hidden;
+  }
+  .team-avatar.photo { width: 132px; height: 132px; }
+  .team-avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .team-card .gdc {
+    display: block;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--mute-ink);
+    margin-top: 14px;
+  }
+  .team-card h3 {
+    font-size: 19px; font-weight: 700; letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .team-card .role {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute-ink);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .team-card p {
+    font-size: 14px; line-height: 1.65;
+    color: var(--mute-ink);
+  }
+  .team-card a { color: var(--accent); }
+  @media (max-width: 920px) {
+    .team-section { padding: 70px 0 80px; }
+    .team-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  }
+
+  /* ════════════════════════════════════════════ */
+  /*  REVIEWS (dark)                               */
+  /* ════════════════════════════════════════════ */
+  .reviews {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .reviews::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 calc(100% / 48 - 1px),
+        rgba(255,255,255,0.03) calc(100% / 48 - 1px) calc(100% / 48)
+      );
+    pointer-events: none;
+  }
+  .reviews > .wrap { position: relative; z-index: 2; }
+  .reviews .label {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    display: flex; align-items: center; gap: 14px;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  .reviews .label::before {
+    content: ''; width: 28px; height: 1px; background: currentColor;
+  }
+  .reviews h2 {
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    margin-bottom: 20px;
+  }
+  .reviews h2 em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    color: var(--accent);
+  }
+  .reviews .reviews-sub {
+    font-size: 15px; line-height: 1.65;
+    color: var(--mute);
+    max-width: 560px;
+    margin-bottom: 60px;
+  }
+  .review-marquee {
+    overflow: hidden;
+    margin: 0 -36px;
+    padding: 0 0 6px;
+  }
+  .review-track {
+    display: flex;
+    width: max-content;
+    animation: reviewScroll 180s linear infinite;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .review-marquee:hover .review-track { animation-play-state: paused; }
+  }
+  .review-track.paused { animation-play-state: paused; }
+  @keyframes reviewScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .review-set {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
+  }
+  .review-card {
+    width: 380px;
+    flex-shrink: 0;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line);
+    padding: 28px 26px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .review-top {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+    flex-wrap: wrap;
+  }
+  .review-card .stars {
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+  .review-card .dr {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+  }
+  .review-card blockquote {
+    font-size: 14px; line-height: 1.65;
+    color: rgba(255,255,255,0.85);
+    flex: 1;
+  }
+  .review-card .who {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .review-card .who small {
+    display: block;
+    font-weight: 500;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mute);
+    margin-top: 4px;
+  }
+  @media (max-width: 920px) {
+    .reviews { padding: 70px 0 80px; }
+    }
+
+  /* ════════════════════════════════════════════ */
+  /*  CTA BAND                                     */
+  /* ════════════════════════════════════════════ */
+  .cta-band {
+    background: var(--paper);
+    padding: 100px 0;
+    text-align: center;
+  }
+  .cta-band h2 {
+    font-size: clamp(34px, 4.6vw, 64px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.98;
+    margin-bottom: 20px;
+  }
+  .cta-band h2 em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    color: var(--accent);
+  }
+  .cta-band p {
+    font-size: 16px; color: var(--mute-ink);
+    margin-bottom: 36px;
+  }
+  .cta-band .cta {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 17px 30px;
+    background: var(--accent);
+    color: var(--paper);
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 700;
+    transition: background 250ms ease;
+  }
+  .cta-band .cta:hover { background: var(--ink); }
+  .cta-band .cta-phone {
+    display: block;
+    margin-top: 18px;
+    font-size: 15px; font-weight: 600; letter-spacing: 0.04em;
+    color: var(--ink);
+    transition: color 220ms ease;
+  }
+  .cta-band .cta-phone em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    color: var(--mute-ink);
+    margin-right: 4px;
+  }
+  .cta-band .cta-phone:hover { color: var(--accent); }
+
+  /* ════════════════════════════════════════════ */
+  /*  FOOTER                                       */
+  /* ════════════════════════════════════════════ */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 70px 0 40px;
+  }
+  .foot-grid {
+    display: grid; grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .foot-brand .mark {
+    font-weight: 800; font-size: 15px;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .foot-brand .mark .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  .foot-brand p {
+    font-size: 13px; line-height: 1.7;
+    color: var(--mute);
+    max-width: 320px;
+  }
+  .foot-col h4 {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .foot-col p, .foot-col a {
+    font-size: 13px; line-height: 1.8;
+    color: rgba(255,255,255,0.78);
+    transition: color 200ms ease;
+  }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-bottom {
+    padding-top: 28px;
+    display: flex; justify-content: space-between; flex-wrap: wrap;
+    gap: 14px;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .foot-bottom a { color: inherit; transition: color 200ms ease; }
+  .foot-bottom a:hover { color: var(--accent); }
+  @media (max-width: 720px) {
+    .foot-grid { grid-template-columns: 1fr; gap: 30px; }
+  }
+
+
+  /* ── mobile dropdown menu (dot toggle) ── */
+  .nav .mark-link { display: flex; align-items: center; gap: 10px; color: inherit; }
+  .nav .dot-toggle {
+    background: none; border: none;
+    padding: 10px; margin: -10px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: inherit;
+  }
+  .nav .dot-toggle .dot { transition: transform 250ms ease; }
+  .nav.menu-open .dot-toggle .dot { transform: scale(1.6); }
+  .nav-menu {
+    position: absolute; top: 100%; left: 0; right: 0;
+    display: none; flex-direction: column;
+    padding: 8px 22px 26px;
+    background: rgba(244,243,239,0.97);
+    border-bottom: 1px solid var(--line-ink);
+    backdrop-filter: blur(12px);
+  }
+  .nav.dark .nav-menu { background: rgba(10,10,10,0.96); border-color: var(--line); }
+  .nav.menu-open .nav-menu { display: flex; }
+  .nav-menu .menu-item {
+    padding: 15px 0;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px dashed var(--line-ink);
+  }
+  .nav.dark .nav-menu .menu-item { border-color: var(--line); }
+  .nav-menu .menu-book-row {
+    margin-top: 22px;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  }
+  .nav-menu .menu-book {
+    display: inline-flex;
+    padding: 13px 22px;
+    border: 1px solid currentColor;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 700;
+  }
+  .nav-menu .menu-phone { font-size: 15px; font-weight: 600; letter-spacing: 0.04em; }
+  .nav-menu .menu-phone em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    opacity: 0.6; margin-right: 4px;
+  }
+  @media (min-width: 821px) {
+    .nav-menu { display: none !important; }
+    .nav .dot-toggle { pointer-events: none; }
+  }
+
+
+  /* hamburger icon on mobile (dot stays on desktop) */
+  .nav .dot-toggle .burger { display: none; }
+  @media (max-width: 820px) {
+    .nav .dot-toggle .dot { display: none; }
+    .nav .dot-toggle .burger {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .nav .dot-toggle .burger i {
+      display: block;
+      width: 20px; height: 2px;
+      background: currentColor;
+      border-radius: 1px;
+      transition: transform 250ms ease, opacity 200ms ease;
+    }
+    .nav.menu-open .dot-toggle .burger i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav.menu-open .dot-toggle .burger i:nth-child(2) { opacity: 0; }
+    .nav.menu-open .dot-toggle .burger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav dark" id="nav">
+  <div class="mark">
+    <button class="dot-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span class="dot"></span><span class="burger"><i></i><i></i><i></i></span></button>
+    <a class="mark-link" href="/">BDHQ <span class="mark-sub">&mdash; BOSTON DENTAL HQ</span></a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="/#about">About</a>
+      <a href="/team" class="active">Team</a>
+      <a href="/pricing">Pricing</a>
+    </div>
+    <a class="nav-phone" href="tel:+441205337000"><em>call us</em> 01205 337 000</a>
+    <a class="book" href="/#book">Book an appointment</a>
+  </div>
+
+  <!-- mobile dropdown (opened by tapping the dot) -->
+  <div class="nav-menu" id="navMenu">
+    <a class="menu-item" href="/#about">About</a>
+    <a class="menu-item" href="/team">Team</a>
+    <a class="menu-item" href="/pricing">Pricing</a>
+    <a class="menu-item" href="/careers">Careers</a>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HEADER ═══ -->
+<header class="page-head">
+  <div class="wrap">
+    <div class="label">The team</div>
+    <h1>Meet <em>the</em> team.</h1>
+    <p>Our founding clinical team brings together experience across endodontics, implantology, oral surgery and general dentistry — all GDC-registered and ready to welcome you when we open in Autumn 2026.</p>
+  </div>
+</header>
+
+<!-- ═══ TEAM ═══ -->
+<section class="team-section">
+  <div class="wrap">
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar photo"><img src="/assets/team/dr-ahmed-elhdiri.png" alt="Dr Ahmed Elhdiri" loading="lazy"></div>
+        <h3>Dr Ahmed Elhdiri</h3>
+        <span class="role">General Dentist</span>
+        <p>MSc-trained in Endodontics &amp; Restorative Dentistry and in Implantology &amp; Oral Surgery. Special interest in root canal treatment, complex restorative work and dental implants — precise, minimally invasive dentistry that saves natural teeth.</p>
+        <span class="gdc">GDC No. 307680</span>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar photo"><img src="/assets/team/dr-kamil-aziz.png" alt="Dr Kamil Aziz" loading="lazy"></div>
+        <h3>Dr Kamil Aziz</h3>
+        <span class="role">General Dentist &amp; Oral Surgeon</span>
+        <p>BDS, Peninsula Schools of Medicine &amp; Dentistry, with dental core training in hospital Oral &amp; Maxillofacial Surgery. Combines general dentistry with a special interest in oral surgery.</p>
+        <span class="gdc">GDC No. 290544</span>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar photo"><img src="/assets/team/dr-nihaal-aziz.png" alt="Dr Nihaal Aziz" loading="lazy"></div>
+        <h3>Dr Nihaal Aziz</h3>
+        <span class="role">General Dentist</span>
+        <p>BDS, University of Bristol, with experience across general dentistry and hospital Oral &amp; Maxillofacial Surgery departments. Honest, reliable care tailored to each patient — with comfort always front of mind.</p>
+        <span class="gdc">GDC No. 309894</span>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-avatar">✚</div>
+        <h3>Nursing &amp; Front of House</h3>
+        <span class="role">Now hiring — <a href="/careers">join us</a></span>
+        <p>Our dental nurses and reception team are being recruited now. Think you'd fit? We'd love to hear from you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="label reveal">Reviews</div>
+    <h2 class="reveal">What patients <em>say.</em></h2>
+    <p class="reviews-sub reveal">Real Google reviews of our dentists from the practices where they currently work — this is the care coming to Boston.</p>
+  </div>
+  <div class="review-marquee reveal">
+    <div class="review-track">
+    <div class="review-set">
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Absolutely spot on! Easy to book in with friendly staff, was worried about going, but Dr Kamil was very friendly and helpful, needed a tooth extracted and was in and out in an hour, fantastic service."</blockquote>
+        <span class="who">Chris F<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"I have recently had the root canal treatment done and I have to say my treatment went smoothly from start to finish. Everything was explained very clearly and the whole visit felt very professional. Thank you to Dr Ahmed and Nurse Zainab."</blockquote>
+        <span class="who">Jana S<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"Outstanding service. My 6 year old needed a baby tooth extracted and had never had a dental appointment like this, only checkups. Nihaal and Casey were fantastic — super fast, no tears, my little girl was laughing while they took the tooth out. 10/10."</blockquote>
+        <span class="who">Tarah S<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Booked an appointment the same day. Plan and treatment all done in the most friendly and professional way. Exceptional service and the dentist Kamil was very helpful. Follow up email the next day."</blockquote>
+        <span class="who">Erika B<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"Absolutely fantastic. Ahmed and Zaynab made me feel so ridiculously comfortable. Talked me through every single step of the way. Would so recommend and really helped me with the fear of the dentist, thank you so much."</blockquote>
+        <span class="who">Charlie W<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"I have always dreaded going to the dentist. Nihaal and Georgia were friendly, explained things clearly, and so made my visit less stressful."</blockquote>
+        <span class="who">Carol H<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Kamil and Millie, what a great job you both did on my front tooth! Came out better than my real tooth. So happy with the work you done and how quick you was! Thank you both so much."</blockquote>
+        <span class="who">Ricky B<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"We saw Ahmed and Aafia today with my son. They were so good with him — kind, caring, spoke to him and included him in decisions. My son has asked if Ahmed could be his dentist from now on."</blockquote>
+        <span class="who">Emily C<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"I had an excellent experience with Dentist Nihaal and Nurse Victoria. They are very professional and provided me with outstanding care and a top professional service. My son also goes to the practice."</blockquote>
+        <span class="who">Elena N<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"My daughter very terrified of dentist, but this team is amazing — explain properly, get on with the job, provide excellent service, treatment, we all happy. Thank you for Kamil and Millie."</blockquote>
+        <span class="who">Natalija A<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"I had a broken tooth extracted today by Dr Ahmed who was brilliant. He took his time explaining the process and was happy to answer any questions I had. All the staff are great too. I'll definitely be using these guys again in the future."</blockquote>
+        <span class="who">Ted A<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"Had a split tooth that followed with big nerve pain. Nihaal and Casey carefully checked and explained my choices to solve the problem. We together came with decision to extract bad tooth. Everything went smooth."</blockquote>
+        <span class="who">Lukas D<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Kamil and Millie were absolutely brilliant. Friendly and professional. Anyone wants a superb job doing then I highly recommend."</blockquote>
+        <span class="who">Daniel C<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"1 filling and 1 extraction completed together. I was surprised how at ease I felt — a credit to Ahmed and nurse Zainab. I also enjoyed the clear explanations all the way throughout the process. Thank you once again."</blockquote>
+        <span class="who">Martin G<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"Zainab and Nihaal were great today during my check up. They made me feel very comfortable and clearly explained the process and options throughout. I would definitely recommend!"</blockquote>
+        <span class="who">Nathan R<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Excellent same day service. All staff extremely helpful. Dentist Kamil very reassuring and delivered first class treatment."</blockquote>
+        <span class="who">Chris E<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"Very positive experience. Dr Ahmed was great and explained everything for me and my husband. They were quick, informative, and got an emergency appointment easily."</blockquote>
+        <span class="who">Brittany H<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"Amazing quick service! My dentist Nihaal and his dental nurse Casey were amazingly supportive and reassuring throughout my treatment."</blockquote>
+        <span class="who">Jade<small>Google review</small></span>
+      </div>
+    </div>
+    <div class="review-set" aria-hidden="true">
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Absolutely spot on! Easy to book in with friendly staff, was worried about going, but Dr Kamil was very friendly and helpful, needed a tooth extracted and was in and out in an hour, fantastic service."</blockquote>
+        <span class="who">Chris F<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"I have recently had the root canal treatment done and I have to say my treatment went smoothly from start to finish. Everything was explained very clearly and the whole visit felt very professional. Thank you to Dr Ahmed and Nurse Zainab."</blockquote>
+        <span class="who">Jana S<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"Outstanding service. My 6 year old needed a baby tooth extracted and had never had a dental appointment like this, only checkups. Nihaal and Casey were fantastic — super fast, no tears, my little girl was laughing while they took the tooth out. 10/10."</blockquote>
+        <span class="who">Tarah S<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Booked an appointment the same day. Plan and treatment all done in the most friendly and professional way. Exceptional service and the dentist Kamil was very helpful. Follow up email the next day."</blockquote>
+        <span class="who">Erika B<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"Absolutely fantastic. Ahmed and Zaynab made me feel so ridiculously comfortable. Talked me through every single step of the way. Would so recommend and really helped me with the fear of the dentist, thank you so much."</blockquote>
+        <span class="who">Charlie W<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"I have always dreaded going to the dentist. Nihaal and Georgia were friendly, explained things clearly, and so made my visit less stressful."</blockquote>
+        <span class="who">Carol H<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Kamil and Millie, what a great job you both did on my front tooth! Came out better than my real tooth. So happy with the work you done and how quick you was! Thank you both so much."</blockquote>
+        <span class="who">Ricky B<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"We saw Ahmed and Aafia today with my son. They were so good with him — kind, caring, spoke to him and included him in decisions. My son has asked if Ahmed could be his dentist from now on."</blockquote>
+        <span class="who">Emily C<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"I had an excellent experience with Dentist Nihaal and Nurse Victoria. They are very professional and provided me with outstanding care and a top professional service. My son also goes to the practice."</blockquote>
+        <span class="who">Elena N<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"My daughter very terrified of dentist, but this team is amazing — explain properly, get on with the job, provide excellent service, treatment, we all happy. Thank you for Kamil and Millie."</blockquote>
+        <span class="who">Natalija A<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"I had a broken tooth extracted today by Dr Ahmed who was brilliant. He took his time explaining the process and was happy to answer any questions I had. All the staff are great too. I'll definitely be using these guys again in the future."</blockquote>
+        <span class="who">Ted A<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"Had a split tooth that followed with big nerve pain. Nihaal and Casey carefully checked and explained my choices to solve the problem. We together came with decision to extract bad tooth. Everything went smooth."</blockquote>
+        <span class="who">Lukas D<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Kamil and Millie were absolutely brilliant. Friendly and professional. Anyone wants a superb job doing then I highly recommend."</blockquote>
+        <span class="who">Daniel C<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"1 filling and 1 extraction completed together. I was surprised how at ease I felt — a credit to Ahmed and nurse Zainab. I also enjoyed the clear explanations all the way throughout the process. Thank you once again."</blockquote>
+        <span class="who">Martin G<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"Zainab and Nihaal were great today during my check up. They made me feel very comfortable and clearly explained the process and options throughout. I would definitely recommend!"</blockquote>
+        <span class="who">Nathan R<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
+        <blockquote>"Excellent same day service. All staff extremely helpful. Dentist Kamil very reassuring and delivered first class treatment."</blockquote>
+        <span class="who">Chris E<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
+        <blockquote>"Very positive experience. Dr Ahmed was great and explained everything for me and my husband. They were quick, informative, and got an emergency appointment easily."</blockquote>
+        <span class="who">Brittany H<small>Google review</small></span>
+      </div>
+      <div class="review-card">
+        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
+        <blockquote>"Amazing quick service! My dentist Nihaal and his dental nurse Casey were amazingly supportive and reassuring throughout my treatment."</blockquote>
+        <span class="who">Jade<small>Google review</small></span>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready to <em>book?</em></h2>
+    <p>Book your appointment and we'll save your place in the opening diary.</p>
+    <a class="cta" href="/#book">Book an appointment</a>
+    <a class="cta-phone" href="tel:+441205337000"><em>or call</em> 01205 337 000</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="mark"><span class="dot"></span> Boston Dental HQ</div>
+        <p>A state-of-the-art five-surgery dental practice. Opening on Strait Bargate, Boston — Autumn 2026.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p><a href="tel:+441205337000">01205 337 000</a><br>14–16 Strait Bargate<br>Boston, Lincolnshire<br>PE21 6LW</p>
+      </div>
+      <div class="foot-col">
+        <h4>Status</h4>
+        <p>Construction in progress<br>Opening Autumn 2026<br>365 days · 7 days a week<br>24/7 emergency phone</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Boston Dental HQ Limited · Co. 16943791</span>
+      <span><a href='/'>Home</a> &nbsp;·&nbsp; <a href='/pricing'>Pricing</a> &nbsp;·&nbsp; <a href='/careers'>Careers</a> &nbsp;·&nbsp; <a href='/privacy'>Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── reveals ── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 6) * 70 + 'ms';
+    io.observe(el);
+  });
+
+  /* ── nav dark mode over dark sections ── */
+  const nav = document.getElementById('nav');
+  const darkSections = document.querySelectorAll('.page-head, .reviews, footer');
+  function updateNav() {
+    const navHeight = 60;
+    let isDark = false;
+    darkSections.forEach((s) => {
+      const r = s.getBoundingClientRect();
+      if (r.top < navHeight && r.bottom > navHeight) isDark = true;
+    });
+    nav.classList.toggle('dark', isDark);
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  window.addEventListener('resize', updateNav);
+  updateNav();
+</script>
+
+<script>
+  /* review carousel: hold to pause on touch devices (hover handles desktop) */
+  (function () {
+    var marquee = document.querySelector('.review-marquee');
+    var track = document.querySelector('.review-track');
+    if (!marquee || !track) return;
+    marquee.addEventListener('touchstart', function () {
+      track.classList.add('paused');
+    }, { passive: true });
+    ['touchend', 'touchcancel'].forEach(function (ev) {
+      marquee.addEventListener(ev, function () {
+        track.classList.remove('paused');
+      }, { passive: true });
+    });
+  })();
+</script>
+
+<script>
+  /* mobile dropdown menu */
+  (function () {
+    var navEl = document.getElementById('nav');
+    var toggle = document.getElementById('menuToggle');
+    if (!navEl || !toggle) return;
+    toggle.addEventListener('click', function () {
+      var open = navEl.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.querySelectorAll('.nav-menu a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        navEl.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
