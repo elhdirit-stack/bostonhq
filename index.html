@@ -285,9 +285,9 @@
   }
   .hero-foot .stat strong {
     display: block;
-    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-family: var(--sans); font-weight: 700;
     font-size: clamp(20px, 2.4vw, 30px);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     color: var(--paper);
     margin-bottom: 6px;
     text-transform: none;
@@ -825,14 +825,33 @@
   }
 
   /* — why choose us — */
-  .why-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--line-ink);
-    border: 1px solid var(--line-ink);
+  .why-marquee {
+    overflow: hidden;
+    margin: 0 -36px;
+  }
+  .why-track {
+    display: flex;
+    width: max-content;
+    animation: whyScroll 40s linear infinite;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .why-marquee:hover .why-track { animation-play-state: paused; }
+  }
+  .why-track.paused { animation-play-state: paused; }
+  @keyframes whyScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .why-set {
+    display: flex;
+    gap: 20px;
+    padding-right: 20px;
   }
   .why-card {
+    width: 340px;
+    flex-shrink: 0;
     background: var(--paper);
+    border: 1px solid var(--line-ink);
     padding: 38px 30px;
   }
   .why-card .num {
@@ -852,8 +871,10 @@
     font-size: 14px; line-height: 1.65;
     color: var(--mute-ink);
   }
-  @media (max-width: 920px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .why-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 720px) {
+    .why-marquee { margin: 0 -22px; }
+    .why-card { width: 290px; }
+  }
 
 
 
@@ -926,12 +947,47 @@
     .nav.menu-open .dot-toggle .burger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   }
 
+
+  /* ── mobile top strip (call us / find us) above the normal header ── */
+  .nav-topbar { display: none; }
+  @media (max-width: 820px) {
+    .nav { flex-wrap: wrap; padding: 0 22px; }
+    .nav-topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      flex: 0 0 100%;
+      margin: 0 -22px;
+      padding: 10px 22px;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      font-weight: 700;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav:not(.dark) .nav-topbar { border-color: var(--line-ink); }
+    .nav-topbar em {
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      text-transform: none; letter-spacing: 0;
+      opacity: 0.65;
+      margin-right: 4px;
+    }
+    .nav .mark { padding: 12px 0; }
+    .nav-right {
+      flex-direction: row; align-items: center; gap: 0;
+      padding: 12px 0;
+    }
+    .nav-links { display: none; }
+    .nav-phone { display: none; }
+    .nav .book { order: 0; }
+  }
+
 </style>
 </head>
 <body>
 
 <!-- ═══ NAV ═══ -->
 <nav class="nav dark" id="nav">
+  <div class="nav-topbar">
+    <a href="tel:+441205337000"><em>call us</em> 01205 337 000</a>
+    <a href="https://maps.app.goo.gl/PgV7p6wSYsMVrUJs8" target="_blank" rel="noopener">Locate us</a>
+  </div>
   <div class="mark">
     <button class="dot-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span class="dot"></span><span class="burger"><i></i><i></i><i></i></span></button>
     <a class="mark-link" href="/">BDHQ <span class="mark-sub">&mdash; BOSTON DENTAL HQ</span></a>
@@ -1017,7 +1073,9 @@
       <h2>Why choose <em>us?</em></h2>
       <p>Boston Dental HQ is a brand-new, purpose-built dental practice in the heart of Boston. Five modern surgeries, the latest equipment, and a simple promise: dentistry that's easy to access, honestly priced, and there when you need it.</p>
     </div>
-    <div class="why-grid reveal">
+    <div class="why-marquee reveal">
+      <div class="why-track">
+        <div class="why-set">
       <div class="why-card">
         <span class="num">01</span>
         <h3>Built from scratch</h3>
@@ -1037,6 +1095,30 @@
         <span class="num">04</span>
         <h3>Transparent fees</h3>
         <p>Clear pricing published up front, explained before any treatment starts. No surprises when you get to the desk.</p>
+      </div>
+        </div>
+        <div class="why-set" aria-hidden="true">
+      <div class="why-card">
+        <span class="num">01</span>
+        <h3>Built from scratch</h3>
+        <p>A state-of-the-art five-surgery practice, purpose-built with the latest equipment — not a refurbished old clinic.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">02</span>
+        <h3>Open 365 days</h3>
+        <p>We're open every single day of the year — including weekends and bank holidays. Dental problems don't keep office hours, so neither do we.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">03</span>
+        <h3>Same-day emergencies</h3>
+        <p>In pain? Call our 24/7 emergency line and we'll see you the same day. No waiting weeks with a toothache.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">04</span>
+        <h3>Transparent fees</h3>
+        <p>Clear pricing published up front, explained before any treatment starts. No surprises when you get to the desk.</p>
+      </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1077,7 +1159,7 @@
           </div>
         </aside>
 
-        <div class="form-map">
+        <div class="form-map" id="find-us">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d714.7442684786554!2d-0.024608300767800937!3d52.97915820000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48780bd16b215815%3A0xb40241020df1eedc!2sBoston%20Dental%20HQ!5e1!3m2!1sen!2snl!4v1785099763620!5m2!1sen!2snl" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Boston Dental HQ on Google Maps"></iframe>
         </div>
       </div>
@@ -1272,6 +1354,23 @@
       formError.classList.add('show');
     }
   });
+</script>
+
+<script>
+  /* why-us carousel: hold to pause on touch devices (hover handles desktop) */
+  (function () {
+    var marquee = document.querySelector('.why-marquee');
+    var track = document.querySelector('.why-track');
+    if (!marquee || !track) return;
+    marquee.addEventListener('touchstart', function () {
+      track.classList.add('paused');
+    }, { passive: true });
+    ['touchend', 'touchcancel'].forEach(function (ev) {
+      marquee.addEventListener(ev, function () {
+        track.classList.remove('paused');
+      }, { passive: true });
+    });
+  })();
 </script>
 
 <script>
