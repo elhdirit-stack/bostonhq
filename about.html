@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Team — Boston Dental HQ · Meet our clinicians</title>
-<meta name="description" content="Meet the founding team at Boston Dental HQ — experienced, GDC-registered clinicians at our new practice on Strait Bargate, Boston." />
+<title>About Us — Boston Dental HQ · Why choose us</title>
+<meta name="description" content="Why choose Boston Dental HQ — a brand-new, purpose-built five-surgery dental practice in the heart of Boston. Open 365 days with same-day emergencies and transparent fees." />
 <meta name="robots" content="index, follow" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -555,6 +555,57 @@
     .nav .book { order: 0; }
   }
 
+
+  /* ═══ WHY CHOOSE US carousel ═══ */
+  .why-section {
+    background: var(--bone-deep);
+    padding: 90px 0 100px;
+  }
+  .why-marquee { overflow: hidden; margin: 0 -36px; }
+  .why-track {
+    display: flex;
+    width: max-content;
+    animation: whyScroll 40s linear infinite;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .why-marquee:hover .why-track { animation-play-state: paused; }
+  }
+  .why-track.paused { animation-play-state: paused; }
+  @keyframes whyScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .why-set { display: flex; gap: 20px; padding-right: 20px; }
+  .why-card {
+    width: 340px;
+    flex-shrink: 0;
+    background: var(--paper);
+    border: 1px solid var(--line-ink);
+    padding: 38px 30px;
+  }
+  .why-card .num {
+    font-size: 11px; letter-spacing: 0.22em;
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 22px;
+  }
+  .why-card h3 {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .why-card p {
+    font-size: 14px; line-height: 1.65;
+    color: var(--mute-ink);
+  }
+  @media (max-width: 720px) {
+    .why-section { padding: 60px 0 70px; }
+    .why-marquee { margin: 0 -22px; }
+    .why-card { width: 290px; }
+  }
+
 </style>
 </head>
 <body>
@@ -571,8 +622,8 @@
   </div>
   <div class="nav-right">
     <div class="nav-links">
-      <a href="/about">About</a>
-      <a href="/team" class="active">Team</a>
+      <a href="/about" class="active">About</a>
+      <a href="/team">Team</a>
       <a href="/pricing">Pricing</a>
     </div>
     <a class="nav-phone" href="tel:+441205337000"><em>call us</em> 01205 337 000</a>
@@ -591,243 +642,66 @@
 <!-- ═══ PAGE HEADER ═══ -->
 <header class="page-head">
   <div class="wrap">
-    <div class="label">The team</div>
-    <h1>Meet <em>the</em> team.</h1>
-    <p>Our founding clinical team brings together experience across endodontics, implantology, oral surgery and general dentistry — all GDC-registered and ready to welcome you when we open in Autumn 2026.</p>
+    <div class="label">About us</div>
+    <h1>Why choose <em>us?</em></h1>
+    <p>Boston Dental HQ is a brand-new, purpose-built dental practice in the heart of Boston. Five modern surgeries, the latest equipment, and a simple promise: dentistry that's easy to access, honestly priced, and there when you need it.</p>
   </div>
 </header>
 
-<!-- ═══ TEAM ═══ -->
-<section class="team-section">
+<!-- ═══ WHY CHOOSE US ═══ -->
+<section class="why-section">
   <div class="wrap">
-    <div class="team-grid">
-      <div class="team-card reveal">
-        <div class="team-avatar photo"><img src="/assets/team/dr-ahmed-elhdiri.png" alt="Dr Ahmed Elhdiri" loading="lazy"></div>
-        <h3>Dr Ahmed Elhdiri</h3>
-        <span class="role">General Dentist</span>
-        <p>MSc-trained in Endodontics &amp; Restorative Dentistry and in Implantology &amp; Oral Surgery. Special interest in root canal treatment, complex restorative work and dental implants — precise, minimally invasive dentistry that saves natural teeth.</p>
-        <span class="gdc">GDC No. 307680</span>
+    <div class="why-marquee reveal">
+      <div class="why-track">
+        <div class="why-set">
+      <div class="why-card">
+        <span class="num">01</span>
+        <h3>Built from scratch</h3>
+        <p>A state-of-the-art five-surgery practice, purpose-built with the latest equipment — not a refurbished old clinic.</p>
       </div>
-      <div class="team-card reveal">
-        <div class="team-avatar photo"><img src="/assets/team/dr-kamil-aziz.png" alt="Dr Kamil Aziz" loading="lazy"></div>
-        <h3>Dr Kamil Aziz</h3>
-        <span class="role">General Dentist &amp; Oral Surgeon</span>
-        <p>BDS, Peninsula Schools of Medicine &amp; Dentistry, with dental core training in hospital Oral &amp; Maxillofacial Surgery. Combines general dentistry with a special interest in oral surgery.</p>
-        <span class="gdc">GDC No. 290544</span>
+      <div class="why-card">
+        <span class="num">02</span>
+        <h3>Open 365 days</h3>
+        <p>We're open every single day of the year — including weekends and bank holidays. Dental problems don't keep office hours, so neither do we.</p>
       </div>
-      <div class="team-card reveal">
-        <div class="team-avatar photo"><img src="/assets/team/dr-nihaal-aziz.png" alt="Dr Nihaal Aziz" loading="lazy"></div>
-        <h3>Dr Nihaal Aziz</h3>
-        <span class="role">General Dentist</span>
-        <p>BDS, University of Bristol, with experience across general dentistry and hospital Oral &amp; Maxillofacial Surgery departments. Honest, reliable care tailored to each patient — with comfort always front of mind.</p>
-        <span class="gdc">GDC No. 309894</span>
+      <div class="why-card">
+        <span class="num">03</span>
+        <h3>Same-day emergencies</h3>
+        <p>In pain? Call our 24/7 emergency line and we'll see you the same day. No waiting weeks with a toothache.</p>
       </div>
-      <div class="team-card reveal">
-        <div class="team-avatar">✚</div>
-        <h3>Nursing &amp; Front of House</h3>
-        <span class="role">Now hiring — <a href="/careers">join us</a></span>
-        <p>Our dental nurses and reception team are being recruited now. Think you'd fit? We'd love to hear from you.</p>
+      <div class="why-card">
+        <span class="num">04</span>
+        <h3>Transparent fees</h3>
+        <p>Clear pricing published up front, explained before any treatment starts. No surprises when you get to the desk.</p>
+      </div>
+        </div>
+        <div class="why-set" aria-hidden="true">
+      <div class="why-card">
+        <span class="num">01</span>
+        <h3>Built from scratch</h3>
+        <p>A state-of-the-art five-surgery practice, purpose-built with the latest equipment — not a refurbished old clinic.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">02</span>
+        <h3>Open 365 days</h3>
+        <p>We're open every single day of the year — including weekends and bank holidays. Dental problems don't keep office hours, so neither do we.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">03</span>
+        <h3>Same-day emergencies</h3>
+        <p>In pain? Call our 24/7 emergency line and we'll see you the same day. No waiting weeks with a toothache.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">04</span>
+        <h3>Transparent fees</h3>
+        <p>Clear pricing published up front, explained before any treatment starts. No surprises when you get to the desk.</p>
+      </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ REVIEWS ═══ -->
-<section class="reviews" id="reviews">
-  <div class="wrap">
-    <div class="label reveal">Reviews</div>
-    <h2 class="reveal">What patients <em>say.</em></h2>
-    <p class="reviews-sub reveal">Real Google reviews of our dentists from the practices where they currently work — this is the care coming to Boston.</p>
-  </div>
-  <div class="review-marquee reveal">
-    <div class="review-track">
-    <div class="review-set">
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Absolutely spot on! Easy to book in with friendly staff, was worried about going, but Dr Kamil was very friendly and helpful, needed a tooth extracted and was in and out in an hour, fantastic service."</blockquote>
-        <span class="who">Chris F<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"I have recently had the root canal treatment done and I have to say my treatment went smoothly from start to finish. Everything was explained very clearly and the whole visit felt very professional. Thank you to Dr Ahmed and Nurse Zainab."</blockquote>
-        <span class="who">Jana S<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"Outstanding service. My 6 year old needed a baby tooth extracted and had never had a dental appointment like this, only checkups. Nihaal and Casey were fantastic — super fast, no tears, my little girl was laughing while they took the tooth out. 10/10."</blockquote>
-        <span class="who">Tarah S<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Booked an appointment the same day. Plan and treatment all done in the most friendly and professional way. Exceptional service and the dentist Kamil was very helpful. Follow up email the next day."</blockquote>
-        <span class="who">Erika B<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"Absolutely fantastic. Ahmed and Zaynab made me feel so ridiculously comfortable. Talked me through every single step of the way. Would so recommend and really helped me with the fear of the dentist, thank you so much."</blockquote>
-        <span class="who">Charlie W<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"I have always dreaded going to the dentist. Nihaal and Georgia were friendly, explained things clearly, and so made my visit less stressful."</blockquote>
-        <span class="who">Carol H<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Kamil and Millie, what a great job you both did on my front tooth! Came out better than my real tooth. So happy with the work you done and how quick you was! Thank you both so much."</blockquote>
-        <span class="who">Ricky B<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"We saw Ahmed and Aafia today with my son. They were so good with him — kind, caring, spoke to him and included him in decisions. My son has asked if Ahmed could be his dentist from now on."</blockquote>
-        <span class="who">Emily C<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"I had an excellent experience with Dentist Nihaal and Nurse Victoria. They are very professional and provided me with outstanding care and a top professional service. My son also goes to the practice."</blockquote>
-        <span class="who">Elena N<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"My daughter very terrified of dentist, but this team is amazing — explain properly, get on with the job, provide excellent service, treatment, we all happy. Thank you for Kamil and Millie."</blockquote>
-        <span class="who">Natalija A<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"I had a broken tooth extracted today by Dr Ahmed who was brilliant. He took his time explaining the process and was happy to answer any questions I had. All the staff are great too. I'll definitely be using these guys again in the future."</blockquote>
-        <span class="who">Ted A<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"Had a split tooth that followed with big nerve pain. Nihaal and Casey carefully checked and explained my choices to solve the problem. We together came with decision to extract bad tooth. Everything went smooth."</blockquote>
-        <span class="who">Lukas D<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Kamil and Millie were absolutely brilliant. Friendly and professional. Anyone wants a superb job doing then I highly recommend."</blockquote>
-        <span class="who">Daniel C<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"1 filling and 1 extraction completed together. I was surprised how at ease I felt — a credit to Ahmed and nurse Zainab. I also enjoyed the clear explanations all the way throughout the process. Thank you once again."</blockquote>
-        <span class="who">Martin G<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"Zainab and Nihaal were great today during my check up. They made me feel very comfortable and clearly explained the process and options throughout. I would definitely recommend!"</blockquote>
-        <span class="who">Nathan R<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Excellent same day service. All staff extremely helpful. Dentist Kamil very reassuring and delivered first class treatment."</blockquote>
-        <span class="who">Chris E<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"Very positive experience. Dr Ahmed was great and explained everything for me and my husband. They were quick, informative, and got an emergency appointment easily."</blockquote>
-        <span class="who">Brittany H<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"Amazing quick service! My dentist Nihaal and his dental nurse Casey were amazingly supportive and reassuring throughout my treatment."</blockquote>
-        <span class="who">Jade<small>Google review</small></span>
-      </div>
-    </div>
-    <div class="review-set" aria-hidden="true">
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Absolutely spot on! Easy to book in with friendly staff, was worried about going, but Dr Kamil was very friendly and helpful, needed a tooth extracted and was in and out in an hour, fantastic service."</blockquote>
-        <span class="who">Chris F<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"I have recently had the root canal treatment done and I have to say my treatment went smoothly from start to finish. Everything was explained very clearly and the whole visit felt very professional. Thank you to Dr Ahmed and Nurse Zainab."</blockquote>
-        <span class="who">Jana S<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"Outstanding service. My 6 year old needed a baby tooth extracted and had never had a dental appointment like this, only checkups. Nihaal and Casey were fantastic — super fast, no tears, my little girl was laughing while they took the tooth out. 10/10."</blockquote>
-        <span class="who">Tarah S<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Booked an appointment the same day. Plan and treatment all done in the most friendly and professional way. Exceptional service and the dentist Kamil was very helpful. Follow up email the next day."</blockquote>
-        <span class="who">Erika B<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"Absolutely fantastic. Ahmed and Zaynab made me feel so ridiculously comfortable. Talked me through every single step of the way. Would so recommend and really helped me with the fear of the dentist, thank you so much."</blockquote>
-        <span class="who">Charlie W<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"I have always dreaded going to the dentist. Nihaal and Georgia were friendly, explained things clearly, and so made my visit less stressful."</blockquote>
-        <span class="who">Carol H<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Kamil and Millie, what a great job you both did on my front tooth! Came out better than my real tooth. So happy with the work you done and how quick you was! Thank you both so much."</blockquote>
-        <span class="who">Ricky B<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"We saw Ahmed and Aafia today with my son. They were so good with him — kind, caring, spoke to him and included him in decisions. My son has asked if Ahmed could be his dentist from now on."</blockquote>
-        <span class="who">Emily C<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"I had an excellent experience with Dentist Nihaal and Nurse Victoria. They are very professional and provided me with outstanding care and a top professional service. My son also goes to the practice."</blockquote>
-        <span class="who">Elena N<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"My daughter very terrified of dentist, but this team is amazing — explain properly, get on with the job, provide excellent service, treatment, we all happy. Thank you for Kamil and Millie."</blockquote>
-        <span class="who">Natalija A<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"I had a broken tooth extracted today by Dr Ahmed who was brilliant. He took his time explaining the process and was happy to answer any questions I had. All the staff are great too. I'll definitely be using these guys again in the future."</blockquote>
-        <span class="who">Ted A<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"Had a split tooth that followed with big nerve pain. Nihaal and Casey carefully checked and explained my choices to solve the problem. We together came with decision to extract bad tooth. Everything went smooth."</blockquote>
-        <span class="who">Lukas D<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Kamil and Millie were absolutely brilliant. Friendly and professional. Anyone wants a superb job doing then I highly recommend."</blockquote>
-        <span class="who">Daniel C<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"1 filling and 1 extraction completed together. I was surprised how at ease I felt — a credit to Ahmed and nurse Zainab. I also enjoyed the clear explanations all the way throughout the process. Thank you once again."</blockquote>
-        <span class="who">Martin G<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"Zainab and Nihaal were great today during my check up. They made me feel very comfortable and clearly explained the process and options throughout. I would definitely recommend!"</blockquote>
-        <span class="who">Nathan R<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Kamil Aziz</span></div>
-        <blockquote>"Excellent same day service. All staff extremely helpful. Dentist Kamil very reassuring and delivered first class treatment."</blockquote>
-        <span class="who">Chris E<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Ahmed Elhdiri</span></div>
-        <blockquote>"Very positive experience. Dr Ahmed was great and explained everything for me and my husband. They were quick, informative, and got an emergency appointment easily."</blockquote>
-        <span class="who">Brittany H<small>Google review</small></span>
-      </div>
-      <div class="review-card">
-        <div class="review-top"><span class="stars">★★★★★</span><span class="dr">Dr Nihaal Aziz</span></div>
-        <blockquote>"Amazing quick service! My dentist Nihaal and his dental nurse Casey were amazingly supportive and reassuring throughout my treatment."</blockquote>
-        <span class="who">Jade<small>Google review</small></span>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ CTA ═══ -->
 <section class="cta-band">
@@ -896,10 +770,10 @@
 </script>
 
 <script>
-  /* review carousel: hold to pause on touch devices (hover handles desktop) */
+  /* why-us carousel: hold to pause on touch devices (hover handles desktop) */
   (function () {
-    var marquee = document.querySelector('.review-marquee');
-    var track = document.querySelector('.review-track');
+    var marquee = document.querySelector('.why-marquee');
+    var track = document.querySelector('.why-track');
     if (!marquee || !track) return;
     marquee.addEventListener('touchstart', function () {
       track.classList.add('paused');
