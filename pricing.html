@@ -21,9 +21,9 @@
     --ink-soft:   #1A1A1A;
     --paper:      #FFFFFF;
     --bone:       #FFFFFF;
-    --bone-deep:  #F4F4F8;
-    --accent:     #5B5BE8;
-    --mute:       rgba(255,255,255,0.55);
+    --bone-deep:  #F2F2F2;
+    --accent:     #6EC1E4;
+    --mute:       rgba(10,10,10,0.55);
     --mute-ink:   #6A6A66;
     --line:       rgba(255,255,255,0.14);
     --line-ink:   rgba(10,10,10,0.10);
@@ -70,7 +70,7 @@
   .nav.dark {
     color: var(--paper);
     background: rgba(10,10,10,0.62);
-    border-color: var(--line);
+    border-color: var(--line-ink);
   }
   .nav .mark {
     font-weight: 800; font-size: 14px; letter-spacing: -0.01em;
@@ -129,8 +129,8 @@
   /*  PAGE HEADER + PRICE LIST (dark)              */
   /* ════════════════════════════════════════════ */
   .page-head {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--bone-deep);
+    color: var(--ink);
     padding: 190px 0 100px;
     position: relative;
     overflow: hidden;
@@ -142,14 +142,14 @@
       repeating-linear-gradient(
         90deg,
         transparent 0 calc(100% / 48 - 1px),
-        rgba(255,255,255,0.03) calc(100% / 48 - 1px) calc(100% / 48)
+        rgba(10,10,10,0.035) calc(100% / 48 - 1px) calc(100% / 48)
       );
     pointer-events: none;
   }
   .page-head > .wrap { position: relative; z-index: 2; }
   .page-head .label {
     font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--mute);
+    color: var(--mute-ink);
     display: flex; align-items: center; gap: 14px;
     font-weight: 500;
     margin-bottom: 32px;
@@ -170,7 +170,7 @@
   }
   .page-head p {
     font-size: 17px; line-height: 1.65;
-    color: rgba(255,255,255,0.75);
+    color: rgba(10,10,10,0.7);
     max-width: 620px;
   }
   .price-grid {
@@ -182,11 +182,11 @@
     display: flex; justify-content: space-between; align-items: baseline;
     gap: 24px;
     padding: 20px 0;
-    border-bottom: 1px dashed var(--line);
+    border-bottom: 1px dashed var(--line-ink);
   }
   .price-row .treatment {
     font-size: 15px;
-    color: rgba(255,255,255,0.88);
+    color: rgba(10,10,10,0.85);
   }
   .price-row .price {
     font-family: var(--serif); font-style: italic; font-weight: 300;
@@ -197,13 +197,13 @@
   .price-row .price small {
     font-family: var(--sans); font-style: normal;
     font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--mute);
+    color: var(--mute-ink);
     margin-right: 8px;
   }
   .price-note {
     margin-top: 40px;
     font-size: 13px; line-height: 1.7;
-    color: var(--mute);
+    color: var(--mute-ink);
     max-width: 640px;
   }
   @media (max-width: 720px) {
@@ -215,7 +215,7 @@
   /*  PROMISE STRIP (light)                        */
   /* ════════════════════════════════════════════ */
   .promise {
-    background: var(--bone-deep);
+    background: var(--paper);
     padding: 90px 0;
   }
   .promise-grid {
@@ -272,7 +272,7 @@
     font-weight: 700;
     transition: background 250ms ease;
   }
-  .cta-band .cta:hover { background: var(--ink); }
+  .cta-band .cta:hover { background: #4FA9D6; }
   .cta-band .cta-phone {
     display: block;
     margin-top: 18px;
@@ -291,15 +291,15 @@
   /*  FOOTER                                       */
   /* ════════════════════════════════════════════ */
   footer {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--bone-deep);
+    color: var(--ink);
     padding: 70px 0 40px;
   }
   .foot-grid {
     display: grid; grid-template-columns: 1.6fr 1fr 1fr;
     gap: 40px;
     padding-bottom: 40px;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--line-ink);
   }
   .foot-brand .mark {
     font-weight: 800; font-size: 15px;
@@ -313,18 +313,18 @@
   }
   .foot-brand p {
     font-size: 13px; line-height: 1.7;
-    color: var(--mute);
+    color: var(--mute-ink);
     max-width: 320px;
   }
   .foot-col h4 {
     font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--mute);
+    color: var(--mute-ink);
     margin-bottom: 16px;
     font-weight: 500;
   }
   .foot-col p, .foot-col a {
     font-size: 13px; line-height: 1.8;
-    color: rgba(255,255,255,0.78);
+    color: rgba(10,10,10,0.72);
     transition: color 200ms ease;
   }
   .foot-col a:hover { color: var(--accent); }
@@ -333,7 +333,7 @@
     display: flex; justify-content: space-between; flex-wrap: wrap;
     gap: 14px;
     font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--mute);
+    color: var(--mute-ink);
   }
   .foot-bottom a { color: inherit; transition: color 200ms ease; }
   .foot-bottom a:hover { color: var(--accent); }
@@ -361,7 +361,7 @@
     border-bottom: 1px solid var(--line-ink);
     backdrop-filter: blur(12px);
   }
-  .nav.dark .nav-menu { background: rgba(10,10,10,0.96); border-color: var(--line); }
+  .nav.dark .nav-menu { background: rgba(10,10,10,0.96); border-color: var(--line-ink); }
   .nav.menu-open .nav-menu { display: flex; }
   .nav-menu .menu-item {
     padding: 15px 0;
@@ -369,7 +369,7 @@
     font-weight: 600;
     border-bottom: 1px dashed var(--line-ink);
   }
-  .nav.dark .nav-menu .menu-item { border-color: var(--line); }
+  .nav.dark .nav-menu .menu-item { border-color: var(--line-ink); }
   .nav-menu .menu-book-row {
     margin-top: 22px;
     display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
@@ -421,7 +421,7 @@
     padding: 8px 36px;
     font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
     font-weight: 700;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--line-ink);
   }
   .nav:not(.dark) .nav-topbar { border-color: var(--line-ink); }
   .nav-topbar a { transition: color 220ms ease; }
@@ -448,7 +448,7 @@
 <body>
 
 <!-- ═══ NAV ═══ -->
-<nav class="nav dark" id="nav">
+<nav class="nav" id="nav">
   <div class="nav-topbar">
     <a href="tel:+441205337000"><em>call us</em> 01205 337 000</a>
     <a href="https://maps.app.goo.gl/PgV7p6wSYsMVrUJs8" target="_blank" rel="noopener">Locate us</a>
@@ -569,7 +569,7 @@
 
   /* ── nav dark mode over dark sections ── */
   const nav = document.getElementById('nav');
-  const darkSections = document.querySelectorAll('.page-head, footer');
+  const darkSections = document.querySelectorAll('.never-dark');
   function updateNav() {
     const navHeight = 60;
     let isDark = false;

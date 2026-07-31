@@ -20,8 +20,8 @@
     --ink:        #0A0A0A;
     --paper:      #FFFFFF;
     --bone:       #FFFFFF;
-    --bone-deep:  #F4F4F8;
-    --accent:     #5B5BE8;
+    --bone-deep:  #F2F2F2;
+    --accent:     #6EC1E4;
     --mute:       #8E8E88;
     --mute-ink:   #6A6A66;
     --line:       rgba(255,255,255,0.14);
@@ -67,7 +67,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: var(--paper);
-    border-bottom-color: var(--line);
+    border-bottom-color: var(--line-ink);
   }
   .nav:not(.dark) {
     background: rgba(255,255,255,0.82);
@@ -333,8 +333,8 @@
   /*  FOOTER                                       */
   /* ════════════════════════════════════════════ */
   footer {
-    background: var(--ink);
-    color: var(--paper);
+    background: var(--bone-deep);
+    color: var(--ink);
     padding: 80px 0 40px;
   }
   footer .foot-top {
@@ -357,18 +357,18 @@
   }
   footer .foot-brand p {
     font-size: 13px; line-height: 1.7;
-    color: rgba(255,255,255,0.55);
+    color: rgba(10,10,10,0.55);
     max-width: 320px;
   }
   footer .foot-col h4 {
     font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
     font-weight: 600;
-    color: rgba(255,255,255,0.55);
+    color: rgba(10,10,10,0.55);
     margin-bottom: 22px;
   }
   footer .foot-col p, footer .foot-col a {
     font-size: 13px; line-height: 1.85;
-    color: rgba(255,255,255,0.78);
+    color: rgba(10,10,10,0.72);
     display: block;
     text-decoration: none;
   }
@@ -376,7 +376,7 @@
   footer .foot-bottom {
     display: flex; justify-content: space-between;
     padding-top: 30px;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line-ink);
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -411,7 +411,7 @@
     border-bottom: 1px solid var(--line-ink);
     backdrop-filter: blur(12px);
   }
-  .nav.dark .nav-menu { background: rgba(10,10,10,0.96); border-color: var(--line); }
+  .nav.dark .nav-menu { background: rgba(10,10,10,0.96); border-color: var(--line-ink); }
   .nav.menu-open .nav-menu { display: flex; }
   .nav-menu .menu-item {
     padding: 15px 0;
@@ -419,7 +419,7 @@
     font-weight: 600;
     border-bottom: 1px dashed var(--line-ink);
   }
-  .nav.dark .nav-menu .menu-item { border-color: var(--line); }
+  .nav.dark .nav-menu .menu-item { border-color: var(--line-ink); }
   .nav-menu .menu-book-row {
     margin-top: 22px;
     display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
@@ -492,7 +492,7 @@
     padding: 8px 36px;
     font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
     font-weight: 700;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--line-ink);
   }
   .nav:not(.dark) .nav-topbar { border-color: var(--line-ink); }
   .nav-topbar a { transition: color 220ms ease; }
@@ -878,7 +878,7 @@
 <script>
   /* ── nav dark/light adapter ── */
   const nav = document.getElementById('nav');
-  const darkSections = document.querySelectorAll('footer');
+  const darkSections = document.querySelectorAll('.never-dark');
 
   function updateNav() {
     const navHeight = 60;
