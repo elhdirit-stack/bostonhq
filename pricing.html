@@ -8,7 +8,7 @@
 <meta name="robots" content="index, follow" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
 
   /* ════════════════════════════════════════════ */
@@ -27,7 +27,8 @@
     --mute-ink:   #6A6A66;
     --line:       rgba(255,255,255,0.14);
     --line-ink:   rgba(10,10,10,0.10);
-    --sans:       'Archivo', system-ui, sans-serif;
+    --sans:       'Poppins', 'Archivo', system-ui, sans-serif;
+    --script:     'Great Vibes', cursive;
     --serif:      'Fraunces', Georgia, serif;
   }
 
@@ -191,7 +192,7 @@
   .price-row .price {
     font-family: var(--serif); font-style: italic; font-weight: 300;
     font-size: 20px;
-    color: var(--paper);
+    color: var(--ink);
     white-space: nowrap;
   }
   .price-row .price small {
@@ -443,6 +444,134 @@
     .nav .book { order: 0; }
   }
 
+
+  /* ═══ OPTION 2 · header + fonts ═══ */
+  body { font-weight: 300; }
+  .nav {
+    padding: 0 36px;
+    background: var(--paper);
+    backdrop-filter: none;
+    border-bottom: 1px solid var(--line-ink);
+    flex-wrap: wrap;
+  }
+  .nav-bar {
+    flex: 0 0 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 18px 0 14px;
+  }
+  .nav-loc, .nav-tel {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 220ms ease;
+  }
+  .nav-loc:hover, .nav-tel:hover { color: var(--accent); }
+  .nav-tel { justify-self: end; }
+  .nav .mark { justify-self: center; }
+  .nav .mark-link { font-size: 17px; letter-spacing: 0.06em; font-weight: 600; }
+  .nav .mark .mark-sub { font-weight: 400; letter-spacing: 0.24em; }
+  .nav-sub {
+    flex: 0 0 100%;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    min-height: 58px;
+    padding: 0;
+    border-top: 1px solid var(--line-ink);
+  }
+  .nav-sub .nav-links { display: flex; gap: 30px; }
+  .nav-sub .nav-links a {
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 500;
+    opacity: 0.75;
+    transition: color 220ms ease, opacity 220ms ease;
+  }
+  .nav-sub .nav-links a:hover,
+  .nav-sub .nav-links a.active { opacity: 1; color: var(--accent); }
+  .nav-sub .book.pill {
+    position: absolute; right: 0; top: 50%;
+    transform: translateY(-50%);
+    border-radius: 999px;
+    padding: 9px 22px;
+    font-size: 11px;
+  }
+  .book.book-m { display: none; }
+  .nav-topbar { display: none; }
+
+  /* headings in the new type style */
+  .page-head { padding: 200px 0 90px; }
+  .page-head h1 {
+    font-weight: 500;
+    font-size: clamp(34px, 4.6vw, 64px);
+    letter-spacing: 0;
+    line-height: 1.12;
+  }
+  .page-head h1 em,
+  .section-head h2 em,
+  .cta-band h2 em,
+  .reviews h2 em,
+  .apply-head h2 em {
+    font-family: var(--script);
+    font-style: normal;
+    font-weight: 400;
+    color: var(--accent);
+    font-size: 1.2em;
+  }
+  .section-head h2, .cta-band h2, .reviews h2, .apply-head h2 {
+    font-weight: 500;
+    letter-spacing: 0;
+    font-size: clamp(30px, 3.4vw, 46px);
+    line-height: 1.15;
+  }
+  button.submit { border-radius: 999px; }
+  .cta-band .cta { border-radius: 999px; }
+  .label { font-weight: 400; }
+  .foot-col h4, .foot-col h5 {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+  }
+
+  @media (max-width: 820px) {
+    .nav { padding: 0 22px; }
+    .nav-topbar {
+      display: flex; justify-content: space-between; align-items: center;
+      flex: 0 0 calc(100% + 44px);
+      margin: 0 -22px;
+      padding: 10px 22px;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      font-weight: 600;
+      background: var(--accent);
+      color: var(--paper);
+      border-bottom: none;
+    }
+    .nav-topbar em {
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      text-transform: none; letter-spacing: 0;
+      opacity: 0.85;
+      margin-right: 4px;
+    }
+    .nav-bar {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 0;
+    }
+    .nav-loc, .nav-tel { display: none; }
+    .nav-sub { display: none; }
+    .book.book-m {
+      display: inline-flex;
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      font-weight: 700;
+      padding: 11px 20px;
+      border: 1px solid currentColor;
+      transition: background 250ms ease, color 250ms ease;
+    }
+    .page-head { padding: 170px 0 60px; }
+  }
+
 </style>
 </head>
 <body>
@@ -453,21 +582,32 @@
     <a href="tel:+441205337000"><em>call us</em> 01205 337 000</a>
     <a href="https://maps.app.goo.gl/PgV7p6wSYsMVrUJs8" target="_blank" rel="noopener">Locate us</a>
   </div>
-  <div class="mark">
-    <button class="dot-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span class="dot"></span><span class="burger"><i></i><i></i><i></i></span></button>
-    <a class="mark-link" href="/">BDHQ <span class="mark-sub">&mdash; BOSTON DENTAL HQ</span></a>
+  <div class="nav-bar">
+    <a class="nav-loc" href="https://maps.app.goo.gl/PgV7p6wSYsMVrUJs8" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-5.6-7-11a7 7 0 1 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      Strait Bargate, Boston
+    </a>
+    <div class="mark">
+      <button class="dot-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span class="dot"></span><span class="burger"><i></i><i></i><i></i></span></button>
+      <a class="mark-link" href="/">BDHQ <span class="mark-sub">&mdash; BOSTON DENTAL HQ</span></a>
+    </div>
+    <a class="nav-tel" href="tel:+441205337000">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+      01205 337 000
+    </a>
+    <a class="book book-m" href="/#book">Book an appointment</a>
   </div>
-  <div class="nav-right">
+  <div class="nav-sub">
     <div class="nav-links">
       <a href="/about">About</a>
       <a href="/team">Team</a>
       <a href="/pricing" class="active">Pricing</a>
+      <a href="/careers">Careers</a>
     </div>
-    <a class="nav-phone" href="tel:+441205337000"><em>call us</em> 01205 337 000</a>
-    <a class="book" href="/#book">Book an appointment</a>
+    <a class="book pill" href="/#book">Book an Appointment</a>
   </div>
 
-  <!-- mobile dropdown (opened by tapping the dot) -->
+  <!-- mobile dropdown (opened by tapping the burger) -->
   <div class="nav-menu" id="navMenu">
     <a class="menu-item" href="/about">About</a>
     <a class="menu-item" href="/team">Team</a>
