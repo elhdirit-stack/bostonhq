@@ -1333,6 +1333,60 @@
   /* never break a phone number across lines */
   a[href^='tel:'] { white-space: nowrap; }
 
+
+  /* ═══ FAQ (Rise-style accordions) ═══ */
+  .faq { background: var(--paper); padding: 90px 0 100px; }
+  .faq-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(30px, 3.4vw, 46px);
+    letter-spacing: 0;
+    margin-bottom: 34px;
+  }
+  .faq-title em { font-style: normal; color: var(--accent); }
+  .faq-list { max-width: 860px; }
+  .faq details { border-bottom: 1px solid var(--line-ink); }
+  .faq details:first-of-type { border-top: 1px solid var(--line-ink); }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    padding: 22px 0;
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:hover { color: var(--accent); }
+  .faq-x {
+    flex-shrink: 0;
+    font-family: var(--sans);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--accent);
+    transition: transform 250ms ease;
+  }
+  .faq details[open] .faq-x { transform: rotate(45deg); }
+  .faq-a {
+    padding: 0 40px 24px 0;
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(10,10,10,0.72);
+    max-width: 760px;
+  }
+  .faq-a a {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  @media (max-width: 720px) {
+    .faq { padding: 60px 0 70px; }
+    .faq summary { font-size: 17px; padding: 18px 0; }
+  }
+
 </style>
 </head>
 <body>
@@ -1576,6 +1630,45 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="label reveal">FAQs</div>
+    <h2 class="faq-title reveal">Frequently asked <em>questions.</em></h2>
+    <div class="faq-list reveal">
+      <details>
+        <summary>When do you open?<span class="faq-x">+</span></summary>
+        <div class="faq-a"><p>We open in Autumn 2026 at 14&ndash;16 Strait Bargate, in the heart of Boston. Book now and we'll save your place in the opening diary, so you're among the first patients seen.</p></div>
+      </details>
+      <details>
+        <summary>How do I book an appointment?<span class="faq-x">+</span></summary>
+        <div class="faq-a"><p>Fill in the booking form above and we'll be in touch to confirm your appointment. Prefer to talk? Call us on <a href="tel:+441205337000">01205 337 000</a>.</p></div>
+      </details>
+      <details>
+        <summary>What happens if I have a dental emergency?<span class="faq-x">+</span></summary>
+        <div class="faq-a"><p>We offer same-day emergency appointments every day of the year, and our phone line is open 24/7 for emergencies. One call and you're in the chair, not on a waiting list.</p></div>
+      </details>
+      <details>
+        <summary>Are you open on weekends?<span class="faq-x">+</span></summary>
+        <div class="faq-a"><p>Yes. We're open seven days a week, including weekends and bank holidays, because teeth don't keep office hours.</p></div>
+      </details>
+      <details>
+        <summary>How much do treatments cost?<span class="faq-x">+</span></summary>
+        <div class="faq-a"><p>Our guide prices are published on our <a href="/pricing">pricing page</a>, and every treatment plan is provided in writing with itemised costs before any work begins. The quote you get is the bill you pay.</p></div>
+      </details>
+      <details>
+        <summary>I'm nervous about the dentist. Can you help?<span class="faq-x">+</span></summary>
+        <div class="faq-a"><p>Absolutely. Our team takes real pride in caring for nervous patients: unhurried appointments, everything explained in plain English, and treatment that goes at your pace, never ours.</p></div>
+      </details>
+      <details>
+        <summary>Where do I find you?<span class="faq-x">+</span></summary>
+        <div class="faq-a"><p>14&ndash;16 Strait Bargate, Boston, Lincolnshire, PE21 6LW, right in the town centre. <a href="https://maps.app.goo.gl/PgV7p6wSYsMVrUJs8" target="_blank" rel="noopener">Open in Google Maps</a>.</p></div>
+      </details>
     </div>
   </div>
 </section>
