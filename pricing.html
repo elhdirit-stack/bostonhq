@@ -618,6 +618,26 @@
   /* never break a phone number across lines */
   a[href^='tel:'] { white-space: nowrap; }
 
+
+  /* categorized price list */
+  .price-cats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 54px 90px;
+    margin-top: 64px;
+    align-items: start;
+  }
+  .price-cat h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 23px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  @media (max-width: 720px) {
+    .price-cats { grid-template-columns: 1fr; gap: 44px; margin-top: 44px; }
+  }
+
 </style>
 </head>
 <body>
@@ -670,17 +690,61 @@
     <p>Honest, published fees, explained before any treatment begins. These are our guide prices; your dentist will always confirm the exact cost with you first.</p>
 
     <!-- PLACEHOLDER guide prices, replace with the real fee schedule before going live -->
-    <div class="price-grid">
-      <div class="price-row reveal"><span class="treatment">New patient examination</span><span class="price"><small>from</small>£65</span></div>
-      <div class="price-row reveal"><span class="treatment">Emergency appointment</span><span class="price"><small>from</small>£95</span></div>
-      <div class="price-row reveal"><span class="treatment">Hygiene visit</span><span class="price"><small>from</small>£75</span></div>
-      <div class="price-row reveal"><span class="treatment">White filling</span><span class="price"><small>from</small>£120</span></div>
-      <div class="price-row reveal"><span class="treatment">Root canal treatment</span><span class="price"><small>from</small>£350</span></div>
-      <div class="price-row reveal"><span class="treatment">Crown</span><span class="price"><small>from</small>£550</span></div>
-      <div class="price-row reveal"><span class="treatment">Teeth whitening</span><span class="price"><small>from</small>£295</span></div>
-      <div class="price-row reveal"><span class="treatment">Implant consultation</span><span class="price">Free</span></div>
+    <div class="price-cats">
+      <div class="price-cat">
+        <h3>General Dentistry</h3>
+      <div class="price-row"><span class="treatment">New Patient Examination</span><span class="price">£25</span></div>
+      <div class="price-row"><span class="treatment">Routine Examination</span><span class="price">£25</span></div>
+      <div class="price-row"><span class="treatment">Emergency Appointment</span><span class="price">£25</span></div>
+      <div class="price-row"><span class="treatment">Hygiene Appointment</span><span class="price">£59</span></div>
+      <div class="price-row"><span class="treatment">Hygiene + Airflow</span><span class="price">£89</span></div>
+      </div>
+      <div class="price-cat">
+        <h3>Restorative Dentistry</h3>
+      <div class="price-row"><span class="treatment">Composite Filling</span><span class="price"><small>from</small>£145</span></div>
+      <div class="price-row"><span class="treatment">Root Canal Treatment (Incisor)</span><span class="price"><small>from</small>£500</span></div>
+      <div class="price-row"><span class="treatment">Root Canal Treatment (Premolar)</span><span class="price"><small>from</small>£600</span></div>
+      <div class="price-row"><span class="treatment">Root Canal Treatment (Molar)</span><span class="price"><small>from</small>£700</span></div>
+      <div class="price-row"><span class="treatment">Core Build-Up</span><span class="price">£145</span></div>
+      </div>
+      <div class="price-cat">
+        <h3>Extractions</h3>
+      <div class="price-row"><span class="treatment">Simple Extraction</span><span class="price">£150</span></div>
+      <div class="price-row"><span class="treatment">Surgical Extraction</span><span class="price"><small>from</small>£250</span></div>
+      <div class="price-row"><span class="treatment">Wisdom Tooth Extraction</span><span class="price"><small>from</small>£250</span></div>
+      </div>
+      <div class="price-cat">
+        <h3>Crowns & Indirect Restorations</h3>
+      <div class="price-row"><span class="treatment">Ceramic Crown</span><span class="price">£695</span></div>
+      <div class="price-row"><span class="treatment">Porcelain Veneer</span><span class="price">£695</span></div>
+      <div class="price-row"><span class="treatment">Inlay</span><span class="price"><small>from</small>£695</span></div>
+      <div class="price-row"><span class="treatment">Onlay</span><span class="price"><small>from</small>£695</span></div>
+      </div>
+      <div class="price-cat">
+        <h3>Cosmetic Dentistry</h3>
+      <div class="price-row"><span class="treatment">Teeth Whitening</span><span class="price">£299</span></div>
+      <div class="price-row"><span class="treatment">Composite Bonding (per tooth)</span><span class="price">£250</span></div>
+      </div>
+      <div class="price-cat">
+        <h3>Orthodontics</h3>
+      <div class="price-row"><span class="treatment">Invisalign Lite</span><span class="price">£2,495</span></div>
+      <div class="price-row"><span class="treatment">Invisalign Moderate</span><span class="price">£2,995</span></div>
+      <div class="price-row"><span class="treatment">Invisalign Comprehensive</span><span class="price">£3,495</span></div>
+      </div>
+      <div class="price-cat">
+        <h3>Dental Implants</h3>
+      <div class="price-row"><span class="treatment">Implant Consultation</span><span class="price">£60</span></div>
+      <div class="price-row"><span class="treatment">Single Implant with Crown</span><span class="price"><small>from</small>£2,495</span></div>
+      </div>
+      <div class="price-cat">
+        <h3>Periodontics</h3>
+      <div class="price-row"><span class="treatment">Periodontal Assessment</span><span class="price">£89</span></div>
+      <div class="price-row"><span class="treatment">Deep Clean</span><span class="price">£125</span></div>
+      <div class="price-row"><span class="treatment">Deep Clean with Local Anaesthetic</span><span class="price">£185</span></div>
+      <div class="price-row"><span class="treatment">NSPT (per quadrant)</span><span class="price"><small>from</small>£250</span></div>
+      </div>
     </div>
-    <p class="price-note">Full price list available at the practice and published here at opening. All treatment plans are provided in writing with itemised costs before any work begins.</p>
+    <p class="price-note">All fees are guide prices and may vary depending on the complexity of treatment and individual clinical requirements. A full treatment plan and quotation will be provided following consultation. Prices are subject to review without notice.</p>
   </div>
 </header>
 

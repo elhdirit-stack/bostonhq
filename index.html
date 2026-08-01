@@ -474,8 +474,8 @@
 
   .register-head {
     margin-bottom: 70px;
-    display: grid; grid-template-columns: 1fr 1.4fr;
-    gap: 80px; align-items: end;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: end;
   }
   .register-head h2 {
     font-size: clamp(44px, 6.4vw, 96px);
@@ -1407,6 +1407,81 @@
     .faq summary { font-size: 17px; padding: 18px 0; }
   }
 
+
+  /* ═══ enquiry thank-you popup ═══ */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    z-index: 300;
+    display: none;
+    align-items: center; justify-content: center;
+    background: rgba(10,10,10,0.55);
+    padding: 22px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-card {
+    position: relative;
+    background: var(--paper);
+    max-width: 440px;
+    width: 100%;
+    padding: 48px 40px 42px;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(10,10,10,0.3);
+    animation: modalIn 320ms cubic-bezier(.22,.61,.36,1);
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .modal-close {
+    position: absolute; top: 12px; right: 16px;
+    background: none; border: none;
+    font-size: 26px; line-height: 1;
+    color: var(--mute-ink);
+    cursor: pointer;
+  }
+  .modal-close:hover { color: var(--ink); }
+  .modal-check {
+    width: 54px; height: 54px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--paper);
+    font-size: 24px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-card h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+  .modal-card h3 em { font-style: normal; color: var(--accent); }
+  .modal-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(10,10,10,0.72);
+    margin-bottom: 28px;
+  }
+  .modal-cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--accent);
+    color: var(--paper);
+    border: none;
+    border-radius: 999px;
+    padding: 14px 28px;
+    font-family: var(--sans);
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 220ms ease;
+  }
+  .modal-cta:hover { background: #2E3440; }
+
+
+  /* enquiry section: form left, directions right */
+  .form-shell .form-card { order: 1; }
+  .form-shell .form-left { order: 2; }
+
 </style>
 </head>
 <body>
@@ -1541,11 +1616,11 @@
   <span id="register"></span>
   <div class="wrap">
     <div class="label-row reveal">
-      <div class="label">Book an appointment</div>
+      <div class="label">Enquiry</div>
     </div>
 
     <div class="register-head reveal">
-      <h2>Book <em>an</em> appointment.</h2>
+      <h2>Get <em>in</em> touch.</h2>
       <p>Tell us who you are and what you need, and we'll be in touch to confirm your appointment in the opening diary. Prefer to talk? Call us on <a href="tel:+441205337000" style="color: var(--accent); font-weight: 600;">01205 337 000</a>, our phone line is open 24/7 for emergencies.</p>
     </div>
 
@@ -1637,7 +1712,7 @@
           <div class="submit-row">
             <span class="meta">No spam · We'll only contact you about your appointment</span>
             <button type="submit" class="submit" id="submitButton">
-              <span class="submit-label">Book appointment</span>
+              <span class="submit-label">Get in touch</span>
               <span class="arrow"></span>
             </button>
           </div>
@@ -1645,7 +1720,7 @@
 
         <div class="success-state" id="successState">
           <div class="check">✓</div>
-          <h3>Request <em>received</em>.</h3>
+          <h3>Enquiry <em>received</em>.</h3>
           <p>Thank you, we've got your details. We'll be in touch shortly to confirm your appointment. If it's urgent, call us on 01205 337 000.</p>
         </div>
       </div>
@@ -1692,6 +1767,18 @@
     </div>
   </div>
 </section>
+
+
+<!-- ═══ ENQUIRY CONFIRMATION POPUP ═══ -->
+<div class="modal-overlay" id="thanksModal" role="dialog" aria-modal="true" aria-labelledby="thanksTitle">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-check">&#10003;</div>
+    <h3 id="thanksTitle">Thank <em>you.</em></h3>
+    <p>We've received your enquiry and we'll be in touch shortly. You're in safe hands from here.</p>
+    <button class="modal-cta" id="modalOk">Book an appointment, no rush</button>
+  </div>
+</div>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
@@ -1799,6 +1886,7 @@
       if (data.success) {
         form.style.display = 'none';
         successState.classList.add('show');
+        document.getElementById('thanksModal').classList.add('open');
       } else {
         console.error('Web3Forms error:', data);
         submitButton.disabled = false;
@@ -1868,6 +1956,19 @@
     next.addEventListener('click', function () {
       scroller.scrollBy({ left: step(), behavior: 'smooth' });
     });
+  })();
+</script>
+
+<script>
+  /* thank-you popup close */
+  (function () {
+    var overlay = document.getElementById('thanksModal');
+    if (!overlay) return;
+    function close() { overlay.classList.remove('open'); }
+    document.getElementById('modalClose').addEventListener('click', close);
+    document.getElementById('modalOk').addEventListener('click', close);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
   })();
 </script>
 
