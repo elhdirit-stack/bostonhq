@@ -712,6 +712,10 @@
     font-size: 1em;
   }
 
+
+  /* never break a phone number across lines */
+  a[href^='tel:'] { white-space: nowrap; }
+
 </style>
 </head>
 <body>

@@ -1329,6 +1329,10 @@
   }
   .why-card h3 { color: var(--ink); }
 
+
+  /* never break a phone number across lines */
+  a[href^='tel:'] { white-space: nowrap; }
+
 </style>
 </head>
 <body>
@@ -1537,6 +1541,10 @@
               <option value="Nervous patient, take it slow">Nervous patient, take it slow</option>
               <option value="Something else">Something else</option>
             </select>
+          </div>
+          <div class="field">
+            <label for="message">Tell us about your issue <span style="text-transform:none;letter-spacing:0;font-weight:400;">(optional)</span></label>
+            <textarea id="message" name="message" rows="4" placeholder="Describe what's bothering you, how long it's been going on, or anything you'd like us to know before your visit."></textarea>
           </div>
 
           <!-- honeypot for bots, hidden from humans -->
