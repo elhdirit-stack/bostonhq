@@ -747,9 +747,9 @@
   .nav-bar {
     flex: 0 0 100%;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 18px 0 14px;
+    padding: 14px 0 10px;
   }
   .nav-loc, .nav-tel {
     display: inline-flex; align-items: center; gap: 8px;
@@ -760,7 +760,14 @@
   }
   .nav-loc:hover, .nav-tel:hover { color: var(--accent); }
   .nav-tel { justify-self: end; }
-  .nav .mark { justify-self: center; }
+  .nav .mark {
+    position: absolute;
+    left: 36px;
+    bottom: 0;
+    height: 58px;
+    display: flex;
+    align-items: center;
+  }
   .nav .mark-link { font-size: 17px; letter-spacing: 0.06em; font-weight: 600; }
   .nav .mark .mark-sub { font-weight: 400; letter-spacing: 0.24em; }
   .nav-sub {
@@ -850,6 +857,7 @@
       padding: 12px 0;
     }
     .nav-loc, .nav-tel { display: none; }
+    .nav .mark { position: static; height: auto; }
     .nav-sub { display: none; }
     .book.book-m {
       display: inline-flex;
